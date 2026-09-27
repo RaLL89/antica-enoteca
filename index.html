@@ -1,810 +1,662 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>L'Antica Enoteca — Largo di Torre Argentina, Roma</title>
-<meta name="description" content="L'Antica Enoteca a Largo di Torre Argentina. Cucina romana, oltre 300 etichette, tavoli all'aperto sulla piazza dove cadde Cesare. Prenota un tavolo." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L'Antica Enoteca — Vino e cucina romana a Largo di Torre Argentina, Roma</title>
+<meta name="description" content="Enoteca e cucina romana a Largo di Torre Argentina: colazione, pranzo, aperitivo e cena, oltre 300 etichette e il dehors sulla piazza. Aperti tutti i giorni fino a mezzanotte.">
+<meta name="theme-color" content="#5c0c1a">
+<link rel="icon" href="img/logo-insegna.jpg">
+<link rel="apple-touch-icon" href="img/logo-insegna.jpg">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="L'Antica Enoteca — Largo di Torre Argentina, Roma">
+<meta property="og:description" content="Vino, cucina romana e cocktail sulla piazza dove cadde Cesare. Dalle 7:30 a mezzanotte.">
+<meta property="og:image" content="img/tagliolini-cozze-1080.webp">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ink:   '#1c1815',
-          mute:  '#6b6258',
-          line:  '#e7e3da',
-          ash:   '#f3efe6',
-          paper: '#fbfaf6',
-          cream: '#f8f3e7',
-          wine:  '#7d1d1d',
-          wineSoft: '#9a2a2a',
-          gold:  '#b08a4f',
-          goldSoft: '#d4b378',
-        },
-        fontFamily: {
-          serif: ['"Cormorant Garamond"','"EB Garamond"','Georgia','serif'],
-          sans:  ['Inter','-apple-system','BlinkMacSystemFont','"SF Pro Display"','Arial','sans-serif'],
-        },
-      }
-    }
-  }
+<link href="https://fonts.googleapis.com/css2?family=Federant&family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/reel-poster.webp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"L'Antica Enoteca","image":["img/tagliolini-cozze-1080.webp","img/cantina-parete-1080.webp"],"telephone":"+39 06 6945 2178","priceRange":"€10–30","servesCuisine":["Romana","Italiana","Enoteca"],"acceptsReservations":"True","hasMenu":"#carta","address":{"@type":"PostalAddress","streetAddress":"Via di S. Nicola de' Cesarini, 5","addressLocality":"Roma","postalCode":"00186","addressRegion":"RM","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":41.8953,"longitude":12.4768},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:30","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:00","closes":"23:59"}]}
 </script>
 <style>
-  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-  body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; color: #1c1815; background: #fbfaf6; }
-  ::selection { background:#7d1d1d; color:#f8f3e7; }
+:root{
+  --enamel:#5c0c1a;        /* insegna: smalto bordeaux */
+  --enamel-hi:#7d1426;
+  --night:#1b0c0d;         /* cantina */
+  --wood:#2b1710;          /* bancone */
+  --wood-hi:#3a2116;
+  --brass:#cf9f55;         /* ottone, lampade */
+  --brass-hi:#e7c27f;
+  --cream:#f3e5c8;         /* lettering dell'insegna */
+  --cream-2:rgba(243,229,200,.78);
+  --cream-3:rgba(243,229,200,.56);
+  --line:rgba(243,229,200,.18);
+  --open:#8fd19c;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --display:'Federant',serif;
+  --text:'Alegreya',Georgia,serif;
+  --label:'Josefin Sans',system-ui,sans-serif;
+  --gutter:clamp(18px,5vw,64px);
+  color-scheme:dark;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-color:var(--enamel-hi) var(--night);-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--cream);font-family:var(--text);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--brass);color:var(--night)}
+img,video{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--brass-hi);outline-offset:4px;border-radius:4px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--gutter)}
+.label{font-family:var(--label);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.skip{position:absolute;left:12px;top:-80px;z-index:200;background:var(--brass);color:var(--night);padding:10px 16px;border-radius:6px;font-family:var(--label);font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+h1,h2,h3{font-weight:400;text-wrap:balance}
+h2{font-family:var(--display);font-size:clamp(40px,5.4vw,72px);line-height:1.02;letter-spacing:-.005em}
+h2 em{font-style:normal;color:var(--brass-hi)}
+.lede{font-size:clamp(19px,1.6vw,22px);color:var(--cream-2);max-width:36em;text-wrap:pretty}
+.btn{--b:var(--brass);display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-family:var(--label);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1.5px solid var(--b);transition:background-color .25s,color .25s,transform .35s var(--ease-out)}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn-fill{background:var(--brass);color:var(--night)}
+.btn-fill:hover{background:var(--brass-hi);border-color:var(--brass-hi)}
+.btn-line{background:transparent;color:var(--cream);--b:var(--cream-3)}
+.btn-line:hover{background:var(--cream);color:var(--enamel);border-color:var(--cream)}
+.btn:active{transform:scale(.97)}
 
-  .serif { font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif; }
-  .h-display { font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif; font-weight: 500; letter-spacing: -0.015em; line-height: 1.02; }
-  .h-display-xl { font-size: clamp(3.5rem, 10vw, 9.5rem); }
-  .h-display-lg { font-size: clamp(2.75rem, 7vw, 6.5rem); }
-  .h-display-md { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+/* ---------- header ---------- */
+.top{position:fixed;inset:0 0 auto;z-index:100;transition:background-color .35s,box-shadow .35s}
+.top.solid{background:color-mix(in srgb,var(--enamel) 94%,transparent);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+.top-in{display:flex;align-items:center;gap:28px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand img{width:40px;height:40px;border-radius:8px;box-shadow:0 0 0 1px var(--line)}
+.brand span{font-family:var(--display);font-size:22px;line-height:1;white-space:nowrap}
+.nav{display:flex;gap:26px;list-style:none}
+.nav a{font-family:var(--label);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--cream-2);transition:color .2s}
+.nav a:hover{color:var(--brass-hi)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.1em;background:none;border:0;color:var(--cream-3);padding:7px 11px;border-radius:999px;cursor:pointer;transition:background-color .2s,color .2s}
+.lang button[aria-pressed="true"]{background:var(--cream);color:var(--enamel)}
+.top .btn{min-height:42px;padding:0 20px;font-size:13px}
+@media(max-width:1060px){.nav{display:none}}
+@media(max-width:560px){.hero-ctas .btn{flex:1 1 100%;justify-content:center}.top-in{height:64px;gap:12px}.brand span{font-size:19px}.brand img{width:34px;height:34px}.top .btn{display:none}}
 
-  .eyebrow {
-    font-size: 0.75rem; text-transform: uppercase;
-    letter-spacing: 0.32em; font-weight: 500; color: #7d1d1d;
-  }
+/* ---------- hero: l'insegna ---------- */
+.hero{position:relative;background:var(--enamel);min-height:100svh;display:grid;align-items:center;padding:120px 0 72px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 55%,rgba(27,12,13,.5))}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:center}
+.status{display:inline-flex;align-items:center;gap:10px;font-family:var(--label);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:rgba(27,12,13,.35);border:1px solid var(--line);padding:9px 16px 8px;border-radius:999px;margin-bottom:28px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--open)}
+.status.closed i{background:var(--brass)}
 
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s cubic-bezier(.22,.61,.36,1), transform 1s cubic-bezier(.22,.61,.36,1); }
-  .reveal.in { opacity: 1; transform: none; }
-  .reveal-delay-1 { transition-delay: .1s; }
-  .reveal-delay-2 { transition-delay: .2s; }
-  .reveal-delay-3 { transition-delay: .3s; }
-  .reveal-delay-4 { transition-delay: .4s; }
+.sign{position:relative;max-width:640px;aspect-ratio:600/430;display:grid;place-items:center;text-align:center;padding:15% 9% 6%}
+.sign svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.sign .frame-line{fill:none;stroke:var(--cream);stroke-width:2.2}
+.sign .dots{fill:none;stroke-linecap:round;stroke-width:5.5;stroke-dasharray:0 14}
+.sign .dots-off{stroke:rgba(243,229,200,.22)}
+.sign .dots-on{stroke:var(--brass-hi)}
+.sign .reveal{fill:none;stroke:#fff;stroke-width:40;stroke-dasharray:1 1;stroke-dashoffset:0}
+.hero.lit .sign .reveal{animation:light 2.2s .35s var(--ease-out) backwards}
+@keyframes light{from{stroke-dashoffset:1}}
+.sign-txt{position:relative;display:grid;justify-items:center;gap:.1em}
+.sign h1{font-family:var(--display);font-size:clamp(40px,6.4vw,92px);line-height:.92;letter-spacing:-.01em}
+.sign h1 span{display:block}
+.swash{display:flex;align-items:center;gap:14px;margin-top:.45em;font-family:var(--label);font-weight:600;font-size:clamp(12px,1.1vw,15px);letter-spacing:.34em;text-transform:uppercase;color:var(--cream-2)}
+.swash svg{position:static;width:54px;height:12px;stroke:var(--cream-2);fill:none;stroke-width:1.4}
+.sign .place{font-family:var(--label);font-weight:600;font-size:clamp(11px,1vw,14px);letter-spacing:.2em;text-transform:uppercase;color:var(--cream-3);margin-top:.9em}
+.sign .motto{font-style:italic;font-size:clamp(18px,1.7vw,24px);color:var(--brass-hi);margin-top:.15em}
+.hero-copy{margin-top:30px;max-width:560px}
+.hero-copy p{font-size:clamp(19px,1.6vw,22px);color:var(--cream-2);text-wrap:pretty}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
-  .parallax-bg { will-change: transform; transition: transform .1s linear; }
+.window{justify-self:center;position:relative;width:min(100%,400px);aspect-ratio:9/15;border-radius:200px 200px 18px 18px;overflow:hidden;background:var(--night);box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(207,159,85,.55),0 0 0 9px var(--enamel),0 0 0 10px rgba(207,159,85,.35)}
+.window video,.window img{width:100%;height:100%;object-fit:cover}
+.window figcaption{position:absolute;inset:auto 0 0;padding:44px 20px 18px;background:linear-gradient(transparent,rgba(27,12,13,.85));font-family:var(--label);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-2);text-align:center}
 
-  .h-snap { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .h-snap::-webkit-scrollbar { display:none; }
-  .h-snap > * { scroll-snap-align: start; }
+.facts{display:flex;flex-wrap:wrap;gap:14px 42px;margin-top:56px;padding-top:24px;border-top:1px solid var(--line)}
+.fact{display:grid;gap:2px}
+.fact b{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1}
+.fact b small{font-size:.6em;color:var(--cream-3)}
+.fact span{font-family:var(--label);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-3)}
+.stars{color:var(--brass-hi);letter-spacing:.1em;font-size:18px}
+@media(max-width:900px){
+  .hero{padding:96px 0 56px;min-height:auto}
+  .hero-in{grid-template-columns:1fr}
+  .window{width:min(78vw,340px)}
+  .facts{margin-top:40px}
+}
 
-  @keyframes scroll-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .marquee-track { animation: scroll-x 70s linear infinite; width: max-content; }
-  @media (prefers-reduced-motion: reduce) {
-    *,*::before,*::after { animation: none !important; transition: none !important; }
-    .reveal { opacity: 1; transform: none; }
-  }
+/* ---------- sezioni ---------- */
+section{position:relative}
+.sec{padding:clamp(84px,11vw,150px) 0}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(40px,5vw,64px)}
+.night{background:var(--night)}
+.enamel{background:var(--enamel)}
+.wood{background:var(--wood)}
 
-  .btn-pill { display:inline-flex; align-items:center; gap:.5rem; padding:.95rem 1.75rem; border-radius:9999px; font-weight:500; font-size:.95rem; transition: background-color .25s ease, color .25s ease, transform .25s ease; letter-spacing: .02em; }
-  .btn-wine { background:#7d1d1d; color:#f8f3e7; }
-  .btn-wine:hover { background:#1c1815; }
-  .btn-ink { background:#1c1815; color:#f8f3e7; }
-  .btn-ink:hover { background:#7d1d1d; }
-  .btn-outline { background:transparent; color:#1c1815; box-shadow: inset 0 0 0 1px #d4ccbb; }
-  .btn-outline:hover { background:#1c1815; color:#f8f3e7; box-shadow: inset 0 0 0 1px #1c1815; }
+/* carta per momento */
+.moments{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.moments button{font-family:var(--label);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-2);background:transparent;border:1px solid var(--line);border-radius:999px;padding:12px 20px 11px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:background-color .25s,color .25s,border-color .25s}
+.moments button:hover{border-color:var(--cream-3);color:var(--cream)}
+.moments button[aria-selected="true"]{background:var(--cream);color:var(--enamel);border-color:var(--cream)}
+.moments button small{font-weight:400;letter-spacing:.06em;opacity:.75}
+.now-tag{font-size:11px;letter-spacing:.14em;background:var(--open);color:var(--night);padding:3px 7px 2px;border-radius:4px;font-weight:700}
+.carta{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,80px);align-items:start}
+.carta-photo{position:sticky;top:100px;border-radius:14px;overflow:hidden;aspect-ratio:4/5;background:var(--wood)}
+.carta-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .45s var(--ease-out),transform .9s var(--ease-out)}
+.carta-photo.swap img{opacity:0;transform:scale(1.03)}
+.carta-photo figcaption{position:absolute;left:16px;bottom:16px;right:16px;font-style:italic;font-size:16px;color:var(--cream);text-shadow:0 1px 12px rgba(0,0,0,.7)}
+.panel-intro{font-style:italic;font-size:21px;color:var(--brass-hi);margin-bottom:18px}
+.dishes{list-style:none;transition:opacity .35s var(--ease-out)}
+.dishes.swap{opacity:0}
+.dish{display:grid;grid-template-columns:1fr auto;gap:4px 20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.dish:first-child{border-top:1px solid var(--line)}
+.dish h3{font-family:var(--text);font-weight:500;font-size:22px;line-height:1.25;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.dish .sig{font-family:var(--label);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--night);background:var(--brass);padding:4px 8px 3px;border-radius:4px}
+.dish .price{font-family:var(--display);font-size:22px;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--brass-hi)}
+.dish p{grid-column:1/-1;color:var(--cream-2);font-size:17px;font-style:italic;line-height:1.5}
+.allergens{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;list-style:none}
+.allergens li{font-family:var(--label);font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--cream-3);border:1px solid var(--line);border-radius:4px;padding:3px 7px 2px}
+.carta-note{margin-top:24px;font-size:15px;color:var(--cream-3);font-style:italic}
+@media(max-width:900px){.carta{grid-template-columns:1fr}.carta-photo{position:relative;top:0;aspect-ratio:16/11}}
 
-  .img-overlay::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 100%); pointer-events:none; }
+/* il luogo */
+.place-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.place-photo{position:relative}
+.place-photo img{border-radius:220px 220px 14px 14px;width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:0 0 0 1px rgba(207,159,85,.4),0 0 0 10px var(--enamel),0 0 0 11px rgba(207,159,85,.25)}
+.place-text p{color:var(--cream-2);margin-top:20px;max-width:34em}
+.place-text p strong{color:var(--cream);font-weight:500}
+.timeline{list-style:none;display:grid;gap:0;margin-top:36px;border-left:1px solid var(--line)}
+.timeline li{position:relative;padding:0 0 22px 26px}
+.timeline li::before{content:"";position:absolute;left:-5px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--brass)}
+.timeline b{display:block;font-family:var(--display);font-weight:400;font-size:26px;line-height:1.2}
+.timeline span{color:var(--cream-2);font-size:17px}
+@media(max-width:900px){.place-grid{grid-template-columns:1fr}.place-photo{max-width:440px}}
 
-  .card-pop { transition: transform .5s cubic-bezier(.22,.61,.36,1); }
-  .card-pop:hover { transform: translateY(-6px); }
-  .img-zoom { overflow:hidden; }
-  .img-zoom img { transition: transform .9s cubic-bezier(.22,.61,.36,1); }
-  .img-zoom:hover img { transform: scale(1.04); }
+/* cantina: viaggio in treno */
+.cantina-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.cantina-top img{border-radius:14px;aspect-ratio:5/4;object-fit:cover;object-position:50% 20%;width:100%}
+.route{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;list-style:none;margin-top:clamp(56px,7vw,96px)}
+.route::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:repeating-linear-gradient(90deg,var(--brass) 0 18px,transparent 18px 28px)}
+.route li{position:relative;padding-top:42px}
+.route li::before{content:"";position:absolute;top:0;left:0;width:24px;height:24px;border-radius:50%;background:var(--wood);border:2px solid var(--brass)}
+.route li:first-child::before{background:var(--brass)}
+.route .label{display:block;margin-bottom:6px}
+.route b{display:block;font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1}
+.route span{display:block;font-style:italic;color:var(--cream-2);font-size:17px;margin-top:6px}
+.tally{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:48px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--label);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-3)}
+.tally b{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:0;color:var(--cream);margin-right:8px;text-transform:none}
+@media(max-width:900px){
+  .cantina-top{grid-template-columns:1fr}
+  .route{grid-template-columns:1fr;gap:0;padding-left:0}
+  .route::before{left:11px;right:auto;top:0;bottom:0;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--brass) 0 18px,transparent 18px 28px)}
+  .route li{padding:0 0 30px 46px}
+}
 
-  :focus-visible { outline: 2px solid #7d1d1d; outline-offset: 3px; border-radius: 2px; }
+/* galleria */
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(240px,26vw,360px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gutter) 12px;scrollbar-width:thin}
+.strip figure{scroll-snap-align:start}
+.strip img{border-radius:12px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.strip figcaption{font-style:italic;font-size:16px;color:var(--cream-2);margin-top:10px}
 
-  /* Hero text dramatic underline */
-  .underline-deco { background-image: linear-gradient(120deg, #b08a4f 0%, #b08a4f 100%); background-repeat: no-repeat; background-size: 100% 6px; background-position: 0 90%; padding-bottom: .05em; }
+/* voci */
+.voices-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px}
+.score{display:flex;align-items:center;gap:18px}
+.score b{font-family:var(--display);font-weight:400;font-size:84px;line-height:.9}
+.score span{font-family:var(--label);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-2);line-height:1.6}
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,64px)}
+.quotes blockquote{border-top:1px solid var(--line);padding-top:24px}
+.quotes p{font-size:clamp(21px,2vw,26px);line-height:1.4;font-style:italic;text-wrap:pretty}
+.quotes footer{margin-top:14px;font-family:var(--label);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-3)}
+.quotes footer .stars{font-size:14px;margin-right:8px}
+.demo-note{margin-top:32px;font-size:15px;font-style:italic;color:var(--cream-3)}
+@media(max-width:760px){.quotes{grid-template-columns:1fr}}
 
-  /* Stars */
-  .stars { display:inline-flex; gap:.15rem; }
+.sedi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.sede{position:relative;padding:clamp(28px,3.4vw,44px);border-radius:16px;border:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.sede.here{background:var(--enamel);border-color:rgba(207,159,85,.45)}
+.sede h3{font-family:var(--display);font-weight:400;font-size:clamp(30px,3.2vw,42px);line-height:1.05;margin-top:6px}
+.sede p{color:var(--cream-2);font-size:17px}
+.sede .sede-sub{font-style:italic;margin-top:8px}
+@media(max-width:760px){.sedi{grid-template-columns:1fr}}
+/* prenota */
+.book{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,6vw,96px)}
+.phone-big{display:inline-block;font-family:var(--display);font-size:clamp(44px,6vw,80px);line-height:1;text-decoration:none;margin:18px 0 8px;color:var(--cream);transition:color .2s}
+.phone-big:hover{color:var(--brass-hi)}
+.book-alt{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hours{width:100%;border-collapse:collapse;margin-top:36px;font-variant-numeric:tabular-nums}
+.hours caption{text-align:left;margin-bottom:10px}
+.hours td{padding:11px 0;border-bottom:1px solid var(--line);font-size:18px}
+.hours td:last-child{text-align:right}
+.hours tr.today td{color:var(--brass-hi);font-weight:500}
+.hours tr.today td:first-child::after{content:attr(data-today);font-family:var(--label);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-left:10px;background:var(--brass);color:var(--night);padding:3px 7px 2px;border-radius:4px;vertical-align:2px}
+.map{border-radius:14px;overflow:hidden;aspect-ratio:1/1;background:var(--wood);box-shadow:0 0 0 1px var(--line)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
+.where{margin-top:22px;display:grid;gap:14px}
+.where div{display:grid;grid-template-columns:130px 1fr;gap:16px;font-size:17px;color:var(--cream-2)}
+.where .label{font-size:12px;padding-top:4px}
+@media(max-width:900px){.book{grid-template-columns:1fr}.map{aspect-ratio:4/3}}
+@media(max-width:480px){.where div{grid-template-columns:1fr;gap:2px}}
 
-  /* Soft section wash */
-  .wash-cream { background: linear-gradient(180deg, #fbfaf6 0%, #f3efe6 100%); }
+/* footer */
+.foot{background:var(--enamel);padding:72px 0 120px}
+.foot-in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot .brand span{font-size:30px}
+.foot p,.foot li{color:var(--cream-2);font-size:16px}
+.foot ul{list-style:none;display:grid;gap:8px;margin-top:12px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--brass-hi)}
+.legal{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--cream-3);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media(max-width:760px){.foot-in{grid-template-columns:1fr}}
 
-  /* Quote rendering */
-  .quote-mark::before { content:"\201C"; font-family: "Cormorant Garamond", serif; font-size: 6rem; line-height:1; color:#b08a4f; display:block; margin-bottom:-1rem; }
+/* barra mobile */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--night) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.dock .btn{flex:1;justify-content:center;min-height:48px;padding:0 14px}
+@media(max-width:760px){.dock{display:flex}}
+
+/* entrata */
+.rise{animation:rise 1s var(--ease-out) backwards}
+.rise.d1{animation-delay:.9s}.rise.d2{animation-delay:1.05s}.rise.d3{animation-delay:1.2s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
 </style>
 </head>
-<body class="antialiased">
+<body>
+<a class="skip" href="#main" data-i18n="skip">Vai al contenuto</a>
 
-<!-- NAV (transparent over hero -> solid on scroll via JS) -->
-<header id="nav" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
-  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between text-[13px]">
-    <a href="#top" class="flex items-center gap-3">
-      <img src="img/00_profile.jpg" alt="Logo L'Antica Enoteca" class="w-9 h-9 rounded-full object-cover ring-1 ring-wine/30" />
-      <span class="serif text-lg font-medium tracking-tight" id="navTitle">L'Antica Enoteca</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-9 font-medium" id="navLinks">
-      <a href="#luogo" class="hover:text-wine transition-colors">Il luogo</a>
-      <a href="#cantina" class="hover:text-wine transition-colors">La cantina</a>
-      <a href="#piatti" class="hover:text-wine transition-colors">I piatti</a>
-      <a href="#voci" class="hover:text-wine transition-colors">Le voci</a>
-      <a href="#dove" class="hover:text-wine transition-colors">Dove siamo</a>
-    </nav>
-    <a href="#prenota" class="btn-pill btn-wine !py-2 !px-5 text-sm">Prenota un tavolo</a>
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#main"><img src="img/logo-insegna.webp" width="40" height="40" alt=""><span>L'Antica Enoteca</span></a>
+    <nav aria-label="Principale"><ul class="nav">
+      <li><a href="#carta" data-i18n="nav.menu">La carta</a></li>
+      <li><a href="#luogo" data-i18n="nav.place">Il luogo</a></li>
+      <li><a href="#cantina" data-i18n="nav.wine">La cantina</a></li>
+      <li><a href="#voci" data-i18n="nav.reviews">Le voci</a></li>
+      <li><a href="#prenota" data-i18n="nav.where">Dove siamo</a></li>
+    </ul></nav>
+    <div class="lang" role="group" aria-label="Lingua / Language">
+      <button type="button" data-lang="it" aria-pressed="true">IT</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-fill" href="#prenota" data-i18n="cta.book">Prenota</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section id="top" class="relative bg-black text-cream overflow-hidden h-[100svh] min-h-[640px] flex items-end">
-  <div class="absolute inset-0">
-    <video
-      class="parallax-bg w-full h-[120%] object-cover opacity-70"
-      data-parallax="0.22"
-      autoplay muted loop playsinline preload="metadata"
-      poster="img/01_DU5e-dJDAPN.jpg"
-      aria-label="Video dell'Antica Enoteca, ripreso in sala">
-      <source src="img/hero.mp4" type="video/mp4" />
-    </video>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/85"></div>
-    <div class="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-black to-transparent"></div>
-  </div>
-
-  <div class="relative w-full max-w-7xl mx-auto px-6 pb-20 lg:pb-28">
-    <div class="max-w-4xl">
-      <p class="reveal text-[12px] uppercase tracking-[0.4em] text-gold font-medium">Roma — Largo di Torre Argentina</p>
-      <h1 class="reveal reveal-delay-1 h-display h-display-xl mt-6 text-cream">
-        L'Antica<br/>
-        <span class="italic font-light"><span class="underline-deco">Enoteca</span>.</span>
-      </h1>
-      <p class="reveal reveal-delay-2 mt-8 text-xl sm:text-2xl text-cream/85 font-light max-w-2xl leading-snug serif italic">
-        Vino, cucina romana, cocktail.<br class="hidden sm:block"/>
-        Dalle sette e mezza fino a mezzanotte, sulla piazza dove cadde Cesare.
-      </p>
-      <p class="reveal reveal-delay-2 mt-4 text-sm uppercase tracking-[0.3em] text-gold">In Vino Veritas</p>
-      <div class="reveal reveal-delay-3 mt-12 flex flex-wrap items-center gap-4">
-        <a href="#prenota" class="btn-pill btn-wine">Prenota un tavolo</a>
-        <a href="#piatti" class="btn-pill bg-white/10 text-cream hover:bg-white/20 backdrop-blur">
-          Sfoglia i piatti
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>
-        </a>
-      </div>
-
-      <!-- Hero meta row -->
-      <div class="reveal reveal-delay-4 mt-16 grid grid-cols-3 gap-6 max-w-2xl border-t border-cream/15 pt-8">
-        <div>
-          <div class="stars text-gold">★★★★★</div>
-          <div class="serif text-3xl mt-2">4,6<span class="text-cream/50 text-lg">/5</span></div>
-          <div class="text-xs text-cream/55 uppercase tracking-widest mt-1">1.470 recensioni</div>
-        </div>
-        <div>
-          <div class="text-gold text-sm font-medium">Tutti i giorni</div>
-          <div class="serif text-3xl mt-2">7:30<span class="text-cream/50 text-lg">–00:00</span></div>
-          <div class="text-xs text-cream/55 uppercase tracking-widest mt-1">Colazione · pranzo · cena</div>
-        </div>
-        <div>
-          <div class="text-gold text-sm font-medium">Sulla piazza</div>
-          <div class="serif text-3xl mt-2">Dehors</div>
-          <div class="text-xs text-cream/55 uppercase tracking-widest mt-1">Tavoli all'aperto</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="absolute bottom-6 right-6 text-cream/50 text-[11px] uppercase tracking-widest flex items-center gap-2" aria-hidden="true">
-    <span class="w-px h-8 bg-cream/40 animate-pulse"></span>
-    <span>Scorri</span>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<section aria-hidden="true" class="bg-black text-cream py-5 border-y border-cream/10 overflow-hidden">
-  <div class="marquee-track flex gap-10 text-xl sm:text-2xl serif italic text-cream/40 whitespace-nowrap">
-    <span>Cappuccino</span><span class="text-gold">·</span><span>Cornetto</span><span class="text-gold">·</span><span>Brunch</span><span class="text-gold">·</span><span>Tagliolini alle cozze</span><span class="text-gold">·</span><span>Risotto allo scoglio</span><span class="text-gold">·</span><span>Carbonara</span><span class="text-gold">·</span><span>Manhattan</span><span class="text-gold">·</span><span>Cesanese</span><span class="text-gold">·</span><span>Brunello</span><span class="text-gold">·</span><span>In Vino Veritas</span><span class="text-gold">·</span>
-    <span>Cappuccino</span><span class="text-gold">·</span><span>Cornetto</span><span class="text-gold">·</span><span>Brunch</span><span class="text-gold">·</span><span>Tagliolini alle cozze</span><span class="text-gold">·</span><span>Risotto allo scoglio</span><span class="text-gold">·</span><span>Carbonara</span><span class="text-gold">·</span><span>Manhattan</span><span class="text-gold">·</span><span>Cesanese</span><span class="text-gold">·</span><span>Brunello</span><span class="text-gold">·</span><span>In Vino Veritas</span><span class="text-gold">·</span>
-  </div>
-</section>
-
-<!-- LUOGO / Story chapter 1 -->
-<section id="luogo" class="bg-paper py-28 lg:py-40">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <p class="reveal eyebrow">Il luogo</p>
-    <h2 class="reveal reveal-delay-1 h-display h-display-lg mt-8 text-ink">
-      Largo Argentina.<br/>
-      <span class="italic font-light text-wine">Dove la storia si siede.</span>
-    </h2>
-    <p class="reveal reveal-delay-2 mt-10 text-xl serif text-mute leading-relaxed max-w-3xl mx-auto">
-      Quattro templi repubblicani affondati di sei metri sotto il livello della città.
-      Il punto esatto in cui — secondo Svetonio — Giulio Cesare cadde alle Idi di Marzo,
-      44 a.C. E una colonia di gatti che da settant'anni vive lì, indisturbata.
-    </p>
-    <p class="reveal reveal-delay-3 mt-6 text-xl serif text-mute leading-relaxed max-w-3xl mx-auto">
-      A questo angolo di Roma, da generazioni, c'è anche la nostra cantina.
-    </p>
-  </div>
-
-  <div class="max-w-7xl mx-auto px-6 mt-20 grid lg:grid-cols-3 gap-6">
-    <article class="reveal img-zoom card-pop relative rounded-3xl overflow-hidden aspect-[3/4] bg-ink img-overlay">
-      <img class="w-full h-full object-cover" src="img/09_DTGcwGQDH4H.jpg" alt="Il bar dell'Antica Enoteca con lampadario e bottiglie" loading="lazy" />
-      <div class="absolute bottom-6 left-6 right-6 text-cream">
-        <div class="serif text-2xl">L'aperitivo</div>
-        <div class="text-sm text-cream/75 mt-1">Lampadario d'epoca, bar fornito di tutto. Anche di tempo.</div>
-      </div>
-    </article>
-    <article class="reveal reveal-delay-1 img-zoom card-pop relative rounded-3xl overflow-hidden aspect-[3/4] bg-ink img-overlay">
-      <img class="w-full h-full object-cover" src="img/08_DTLGHUvDEzh.jpg" alt="Cameriere prepara il tavolo con calici" loading="lazy" />
-      <div class="absolute bottom-6 left-6 right-6 text-cream">
-        <div class="serif text-2xl">L'accoglienza</div>
-        <div class="text-sm text-cream/75 mt-1">Ogni tavolo, preparato con la stessa cura. Sempre.</div>
-      </div>
-    </article>
-    <article class="reveal reveal-delay-2 img-zoom card-pop relative rounded-3xl overflow-hidden aspect-[3/4] bg-ink img-overlay">
-      <img class="w-full h-full object-cover" src="img/01_DU5e-dJDAPN.jpg" alt="La nostra cantina con bottiglie in vetrina" loading="lazy" />
-      <div class="absolute bottom-6 left-6 right-6 text-cream">
-        <div class="serif text-2xl">La cantina</div>
-        <div class="text-sm text-cream/75 mt-1">Oltre 300 etichette, scelte una a una dal nostro sommelier.</div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="bg-ash py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-px bg-line">
-    <div class="reveal bg-ash px-6 py-12 text-center">
-      <div class="serif text-5xl sm:text-6xl text-ink">1.470</div>
-      <div class="mt-3 text-[11px] text-mute uppercase tracking-[0.25em]">Recensioni</div>
-    </div>
-    <div class="reveal reveal-delay-1 bg-ash px-6 py-12 text-center">
-      <div class="serif text-5xl sm:text-6xl text-ink">300<span class="text-gold">+</span></div>
-      <div class="mt-3 text-[11px] text-mute uppercase tracking-[0.25em]">Etichette in carta</div>
-    </div>
-    <div class="reveal reveal-delay-2 bg-ash px-6 py-12 text-center">
-      <div class="serif text-5xl sm:text-6xl text-ink">10–30<span class="text-2xl text-mute font-sans font-light"> €</span></div>
-      <div class="mt-3 text-[11px] text-mute uppercase tracking-[0.25em]">Prezzo a persona</div>
-    </div>
-    <div class="reveal reveal-delay-3 bg-ash px-6 py-12 text-center">
-      <div class="serif text-5xl sm:text-6xl text-ink">7:30–00<span class="text-2xl text-mute font-sans font-light">:00</span></div>
-      <div class="mt-3 text-[11px] text-mute uppercase tracking-[0.25em]">Tutti i giorni</div>
-    </div>
-  </div>
-</section>
-
-<!-- CANTINA -->
-<section id="cantina" class="bg-black text-cream relative overflow-hidden">
-  <div class="absolute inset-0 opacity-50">
-    <img data-parallax="0.18" class="parallax-bg w-full h-[120%] object-cover" src="img/01_DU5e-dJDAPN.jpg" alt="" loading="lazy" />
-    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-black"></div>
-  </div>
-  <div class="relative max-w-6xl mx-auto px-6 py-32 lg:py-44 text-center">
-    <p class="reveal eyebrow text-gold">La cantina</p>
-    <h2 class="reveal reveal-delay-1 h-display h-display-lg mt-8 text-cream">
-      Trecento etichette.<br/>
-      <span class="italic font-light text-gold">Una sola filosofia.</span>
-    </h2>
-    <p class="reveal reveal-delay-2 mt-10 text-xl serif text-cream/85 leading-relaxed max-w-3xl mx-auto">
-      Cesanese del Piglio per restare in regione. Sangiovese, Nebbiolo e Barolo per
-      salire. Etna Rosso e Frappato per scendere. La nostra carta dei vini si legge
-      come un viaggio in treno: parte da Roma e arriva ovunque.
-    </p>
-    <div class="reveal reveal-delay-3 mt-14 grid grid-cols-2 sm:grid-cols-4 gap-10 max-w-3xl mx-auto">
-      <div>
-        <div class="serif text-3xl text-gold">120</div>
-        <div class="text-xs uppercase tracking-widest text-cream/60 mt-2">Rossi</div>
-      </div>
-      <div>
-        <div class="serif text-3xl text-gold">90</div>
-        <div class="text-xs uppercase tracking-widest text-cream/60 mt-2">Bianchi</div>
-      </div>
-      <div>
-        <div class="serif text-3xl text-gold">45</div>
-        <div class="text-xs uppercase tracking-widest text-cream/60 mt-2">Bollicine</div>
-      </div>
-      <div>
-        <div class="serif text-3xl text-gold">45</div>
-        <div class="text-xs uppercase tracking-widest text-cream/60 mt-2">Dolci & rosati</div>
-      </div>
-    </div>
-    <p class="reveal reveal-delay-4 mt-12 text-xs uppercase tracking-widest text-cream/40">Numeri indicativi · richiedi la carta in sala</p>
-  </div>
-</section>
-
-<!-- PIATTI / Signature -->
-<section id="piatti" class="bg-paper py-28 lg:py-36">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto">
-      <p class="reveal eyebrow">I piatti</p>
-      <h2 class="reveal reveal-delay-1 h-display h-display-lg mt-8 text-ink">La carta romana,<br/><span class="italic font-light">in versione enoteca.</span></h2>
-      <p class="reveal reveal-delay-2 mt-8 text-lg serif text-mute leading-relaxed">
-        Pochi, fatti bene. La cucina romana tradizionale, senza scorciatoie,
-        pensata per accompagnare il bicchiere giusto.
-      </p>
-    </div>
-
-    <!-- Featured 2-up + 1 large -->
-    <div class="mt-16 grid lg:grid-cols-12 gap-6">
-      <article class="reveal lg:col-span-7 img-zoom card-pop relative rounded-3xl overflow-hidden aspect-[16/10] bg-ink img-overlay">
-        <img class="w-full h-full object-cover" src="img/03_DTObDh2DB5n.jpg" alt="Tagliolini con cozze e basilico" loading="lazy" />
-        <div class="absolute top-8 left-8 text-cream">
-          <div class="text-xs uppercase tracking-widest text-cream/80">Il signature</div>
-        </div>
-        <div class="absolute bottom-8 left-8 right-8 text-cream flex items-end justify-between gap-3">
-          <div>
-            <h3 class="h-display text-4xl sm:text-5xl">Tagliolini alle cozze</h3>
-            <p class="text-cream/80 mt-2 serif italic">Pasta fresca, cozze nostrane, vino bianco, basilico.</p>
-          </div>
-          <div class="serif text-3xl shrink-0">€ 18</div>
-        </div>
-      </article>
-      <article class="reveal reveal-delay-1 lg:col-span-5 img-zoom card-pop relative rounded-3xl overflow-hidden aspect-[4/5] lg:aspect-auto bg-ink img-overlay">
-        <img class="w-full h-full object-cover" src="img/07_DTLFpFVDF8q.jpg" alt="Risotto allo scoglio con gambero rosso" loading="lazy" />
-        <div class="absolute bottom-8 left-8 right-8 text-cream flex items-end justify-between gap-3">
-          <div>
-            <h3 class="h-display text-3xl">Risotto allo scoglio</h3>
-            <p class="text-cream/80 mt-1 serif italic text-sm">Mantecato, gambero rosso, prezzemolo.</p>
-          </div>
-          <div class="serif text-2xl shrink-0">€ 22</div>
-        </div>
-      </article>
-    </div>
-
-    <!-- Highlights grid -->
-    <div class="mt-12 grid lg:grid-cols-2 gap-x-16 gap-y-14">
-      <div class="reveal">
-        <p class="eyebrow">Colazione <span class="text-mute font-normal ml-1 normal-case tracking-normal text-[11px]">7:30 – 11:30</span></p>
-        <div class="mt-6 divide-y divide-line">
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Cornetto alla crema</div><div class="text-sm text-mute mt-1">Sfoglia fragrante, crema pasticcera della casa.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 2,00</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Cappuccino</div><div class="text-sm text-mute mt-1">Latte art, tazza con la nostra incisione.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 1,80</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Brunch dell'Enoteca</div><div class="text-sm text-mute mt-1">Avocado, salmone affumicato, uova, toast, rucola.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 14</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Spremuta d'arancia</div><div class="text-sm text-mute mt-1">Fresca, fatta al momento.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 4</div></div>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <p class="eyebrow">Antipasti</p>
-        <div class="mt-6 divide-y divide-line">
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Tagliere dell'Enoteca</div><div class="text-sm text-mute mt-1">Salumi e formaggi del Lazio, miele, marmellate.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 18</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Carciofo alla giudia</div><div class="text-sm text-mute mt-1">Croccante fuori, morbido dentro. Solo in stagione.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 9</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Burrata e pomodori del Pantano</div><div class="text-sm text-mute mt-1">Cuore di latte, pomodorini, olio EVO Sabina.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 12</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Suppli al telefono</div><div class="text-sm text-mute mt-1">Riso al ragù, cuore di mozzarella. Tradizione romana.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 4</div></div>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <p class="eyebrow">Primi</p>
-        <div class="mt-6 divide-y divide-line">
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Tagliolini alle cozze <span class="text-[10px] uppercase tracking-widest text-wine ml-1 align-middle">signature</span></div><div class="text-sm text-mute mt-1">Pasta fresca, cozze nostrane, basilico, vino bianco.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 18</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Risotto allo scoglio</div><div class="text-sm text-mute mt-1">Mantecato, gambero rosso, prezzemolo.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 22</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Carbonara</div><div class="text-sm text-mute mt-1">Guanciale, pecorino, tuorli, pepe.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 16</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Cacio e Pepe</div><div class="text-sm text-mute mt-1">Tonnarello fresco mantecato.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 14</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Amatriciana</div><div class="text-sm text-mute mt-1">Bucatini, pomodoro, guanciale, pecorino.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 15</div></div>
-        </div>
-      </div>
-      <div class="reveal">
-        <p class="eyebrow">Secondi</p>
-        <div class="mt-6 divide-y divide-line">
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Saltimbocca alla romana</div><div class="text-sm text-mute mt-1">Vitello, prosciutto, salvia, vino bianco.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 22</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Coda alla vaccinara</div><div class="text-sm text-mute mt-1">Quattro ore di cottura. Da prenotare.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 24</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Trippa alla romana</div><div class="text-sm text-mute mt-1">Pomodoro, menta, pecorino.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 18</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Abbacchio scottadito</div><div class="text-sm text-mute mt-1">Costolette d'agnello sulla griglia.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 26</div></div>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <p class="eyebrow">Dolci e vini</p>
-        <div class="mt-6 divide-y divide-line">
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Tiramisù della casa</div><div class="text-sm text-mute mt-1">Mascarpone, caffè espresso, savoiardi.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 8</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Maritozzo con panna</div><div class="text-sm text-mute mt-1">Soffice, panna fresca montata a mano.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 7</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Calice di vino dalla carta</div><div class="text-sm text-mute mt-1">Selezione del sommelier, dal Lazio in giù.</div></div><div class="serif text-xl text-ink whitespace-nowrap">€ 6–14</div></div>
-          <div class="py-5 flex items-baseline justify-between gap-4"><div><div class="serif text-xl text-ink">Bottiglia in sala</div><div class="text-sm text-mute mt-1">Oltre 300 etichette: chiedi la carta completa.</div></div><div class="serif text-xl text-ink whitespace-nowrap">da € 25</div></div>
-        </div>
-      </div>
-    </div>
-
-    <p class="text-xs text-mute mt-14 text-center max-w-2xl mx-auto">Menù dimostrativo. La carta in sala è soggetta a stagionalità e disponibilità — al posto della nostra selezione, qui andranno i piatti reali.</p>
-  </div>
-</section>
-
-<!-- HORIZONTAL GALLERY -->
-<section class="bg-cream py-24 lg:py-32 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 mb-12 flex items-end justify-between gap-6 flex-wrap">
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-in">
     <div>
-      <p class="reveal eyebrow">Il banco</p>
-      <h2 class="reveal reveal-delay-1 h-display h-display-lg text-ink mt-4">Scegli con<br/><span class="italic font-light">gli occhi.</span></h2>
+      <p class="status" id="status" aria-live="polite"><i aria-hidden="true"></i><span>Aperto tutti i giorni</span></p>
+      <div class="sign">
+        <svg viewBox="0 0 600 430" aria-hidden="true" focusable="false">
+          <defs>
+            <path id="frame" d="M30 96A22 22 0 0 0 52 74H222C246 74 256 30 300 30C344 30 354 74 378 74H548A22 22 0 0 0 570 96V378A22 22 0 0 0 548 400H52A22 22 0 0 0 30 378Z"/>
+            <mask id="lightmask" maskUnits="userSpaceOnUse"><use href="#frame" class="reveal" pathLength="1"/></mask>
+          </defs>
+          <use href="#frame" class="frame-line" transform="translate(300 215) scale(1.035 1.05) translate(-300 -215)"/>
+          <use href="#frame" class="dots dots-off"/>
+          <use href="#frame" class="dots dots-on" mask="url(#lightmask)"/>
+        </svg>
+        <div class="sign-txt">
+          <h1 id="hero-title"><span>L'Antica</span><span>Enoteca</span></h1>
+          <p class="swash"><svg viewBox="0 0 54 12" aria-hidden="true"><path d="M2 6c8 0 10-5 17-5s6 9 13 9 9-4 20-4"/></svg>Roma<svg viewBox="0 0 54 12" aria-hidden="true" style="transform:scaleX(-1)"><path d="M2 6c8 0 10-5 17-5s6 9 13 9 9-4 20-4"/></svg></p>
+          <p class="place">Largo di Torre Argentina</p>
+          <p class="motto">In Vino Veritas</p>
+        </div>
+      </div>
+      <div class="hero-copy rise d1">
+        <p data-i18n="hero.copy">Vino, cucina romana e cocktail sulla piazza dove cadde Cesare. Dal cappuccino delle sette e mezza all'ultimo calice di mezzanotte.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-fill" href="#prenota"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span data-i18n="cta.bookTable">Prenota un tavolo</span></a>
+          <a class="btn btn-line" href="#carta" id="nowLink"><span data-i18n="cta.menuNow">La carta di adesso</span></a>
+        </div>
+      </div>
+      <div class="facts rise d2">
+        <div class="fact"><b>4,8 <small>/5</small> <span class="stars" aria-hidden="true">★★★★★</span></b><span data-i18n="facts.reviews">Oltre 3.500 recensioni Google</span></div>
+        <div class="fact"><b>7:30–24</b><span data-i18n="facts.hours">Colazione · pranzo · cena</span></div>
+        <div class="fact"><b data-i18n="facts.dehors">Dehors</b><span data-i18n="facts.dehorsSub">Sulla piazza</span></div>
+      </div>
     </div>
-    <div class="reveal reveal-delay-2 text-mute text-sm hidden sm:flex items-center gap-2">
-      <span class="serif italic">Scorri per esplorare</span>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-    </div>
-  </div>
-  <div class="h-snap flex gap-5 overflow-x-auto px-6 pb-6">
-    <article class="shrink-0 w-[300px] sm:w-[360px] rounded-3xl overflow-hidden bg-paper shadow-sm card-pop img-zoom">
-      <div class="aspect-[4/5] bg-cream relative img-overlay">
-        <img class="w-full h-full object-cover" src="img/03_DTObDh2DB5n.jpg" alt="Tagliolini cozze" loading="lazy" />
-        <div class="absolute bottom-5 left-5 right-5 text-cream">
-          <div class="text-xs uppercase tracking-widest text-gold">Signature</div>
-          <div class="serif text-3xl mt-1">Tagliolini cozze</div>
-        </div>
-      </div>
-      <div class="px-5 py-4 flex items-center justify-between">
-        <div class="text-sm text-mute serif italic">Pasta fresca, frutti di mare</div>
-        <div class="serif text-lg text-ink">€ 18</div>
-      </div>
-    </article>
-    <article class="shrink-0 w-[300px] sm:w-[360px] rounded-3xl overflow-hidden bg-paper shadow-sm card-pop img-zoom">
-      <div class="aspect-[4/5] bg-cream relative img-overlay">
-        <img class="w-full h-full object-cover" src="img/07_DTLFpFVDF8q.jpg" alt="Risotto scoglio" loading="lazy" />
-        <div class="absolute bottom-5 left-5 right-5 text-cream">
-          <div class="text-xs uppercase tracking-widest text-cream/80">Primo</div>
-          <div class="serif text-3xl mt-1">Risotto scoglio</div>
-        </div>
-      </div>
-      <div class="px-5 py-4 flex items-center justify-between">
-        <div class="text-sm text-mute serif italic">Mantecato, gambero rosso</div>
-        <div class="serif text-lg text-ink">€ 22</div>
-      </div>
-    </article>
-    <article class="shrink-0 w-[300px] sm:w-[360px] rounded-3xl overflow-hidden bg-paper shadow-sm card-pop img-zoom">
-      <div class="aspect-[4/5] bg-cream relative img-overlay">
-        <img class="w-full h-full object-cover" src="img/05_DTLGgayjOXr.jpg" alt="Brunch dell'enoteca" loading="lazy" />
-        <div class="absolute bottom-5 left-5 right-5 text-cream">
-          <div class="text-xs uppercase tracking-widest text-cream/80">Brunch</div>
-          <div class="serif text-3xl mt-1">Eggs & Salmon</div>
-        </div>
-      </div>
-      <div class="px-5 py-4 flex items-center justify-between">
-        <div class="text-sm text-mute serif italic">Avocado, salmone, uova</div>
-        <div class="serif text-lg text-ink">€ 14</div>
-      </div>
-    </article>
-    <article class="shrink-0 w-[300px] sm:w-[360px] rounded-3xl overflow-hidden bg-paper shadow-sm card-pop img-zoom">
-      <div class="aspect-[4/5] bg-cream relative img-overlay">
-        <img class="w-full h-full object-cover" src="img/04_DTObpJ5jAky.jpg" alt="Cocktail della casa" loading="lazy" />
-        <div class="absolute bottom-5 left-5 right-5 text-cream">
-          <div class="text-xs uppercase tracking-widest text-gold">Mixology</div>
-          <div class="serif text-3xl mt-1">Manhattan</div>
-        </div>
-      </div>
-      <div class="px-5 py-4 flex items-center justify-between">
-        <div class="text-sm text-mute serif italic">Whisky, vermouth, cherry, lemon</div>
-        <div class="serif text-lg text-ink">€ 10</div>
-      </div>
-    </article>
-    <article class="shrink-0 w-[300px] sm:w-[360px] rounded-3xl overflow-hidden bg-paper shadow-sm card-pop img-zoom">
-      <div class="aspect-[4/5] bg-cream relative img-overlay">
-        <img class="w-full h-full object-cover" src="img/10_DTFP914jKbd.jpg" alt="Cornetti alla crema" loading="lazy" />
-        <div class="absolute bottom-5 left-5 right-5 text-cream">
-          <div class="text-xs uppercase tracking-widest text-cream/80">Colazione</div>
-          <div class="serif text-3xl mt-1">Cornetto crema</div>
-        </div>
-      </div>
-      <div class="px-5 py-4 flex items-center justify-between">
-        <div class="text-sm text-mute serif italic">Sfoglia dorata, crema pasticcera</div>
-        <div class="serif text-lg text-ink">€ 2</div>
-      </div>
-    </article>
-    <article class="shrink-0 w-[300px] sm:w-[360px] rounded-3xl overflow-hidden bg-paper shadow-sm card-pop img-zoom">
-      <div class="aspect-[4/5] bg-cream relative img-overlay">
-        <img class="w-full h-full object-cover" src="img/11_DTKSxtojFgS.jpg" alt="Cappuccino della casa" loading="lazy" />
-        <div class="absolute bottom-5 left-5 right-5 text-cream">
-          <div class="text-xs uppercase tracking-widest text-cream/80">Colazione</div>
-          <div class="serif text-3xl mt-1">Cappuccino</div>
-        </div>
-      </div>
-      <div class="px-5 py-4 flex items-center justify-between">
-        <div class="text-sm text-mute serif italic">Latte art, tazza della casa</div>
-        <div class="serif text-lg text-ink">€ 1,80</div>
-      </div>
-    </article>
+    <figure class="window rise d3">
+      <video autoplay muted loop playsinline preload="metadata" poster="img/reel-poster.webp" aria-label="Video del locale: l'ingresso su Largo Argentina, i piatti e i cocktail">
+        <source src="img/reel.mp4" type="video/mp4">
+      </video>
+      <figcaption>Via di S. Nicola de' Cesarini, 5</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- VOCI / Reviews -->
-<section id="voci" class="bg-paper py-28 lg:py-40">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center max-w-3xl mx-auto">
-      <p class="reveal eyebrow">Le voci</p>
-      <h2 class="reveal reveal-delay-1 h-display h-display-lg mt-8 text-ink">Cosa dicono di noi.</h2>
-      <div class="reveal reveal-delay-2 mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
-        <div class="flex items-center gap-3">
-          <div class="serif text-5xl text-ink">4,6</div>
-          <div class="text-left">
-            <div class="stars text-gold text-lg">★★★★★</div>
-            <div class="text-xs text-mute uppercase tracking-widest">1.470 recensioni Google</div>
-          </div>
-        </div>
-        <a href="#" class="text-sm text-wine hover:text-ink transition-colors underline-offset-4 hover:underline">Leggi tutte le recensioni →</a>
+<section class="sec night" id="carta" aria-labelledby="carta-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="carta-title" data-i18n-html="menu.title">Quattro momenti, <em>una sola cucina.</em></h2>
+      <p class="lede" data-i18n="menu.lede">Dalle sette e mezza a mezzanotte la carta cambia con l'ora. Ti mostriamo quella di adesso: tocca un momento per vedere le altre.</p>
+    </div>
+    <div class="moments" role="tablist" aria-label="Momenti della giornata" id="moments"></div>
+    <div class="carta">
+      <figure class="carta-photo" id="cartaPhoto"><img src="img/cornetti-crema-1080.webp" srcset="img/cornetti-crema-640.webp 640w, img/cornetti-crema-1080.webp 1080w" sizes="(max-width:900px) 92vw, 45vw" alt="" width="1080" height="1440" loading="lazy"><figcaption></figcaption></figure>
+      <div role="tabpanel" id="cartaPanel" tabindex="0">
+        <p class="panel-intro" id="panelIntro"></p>
+        <ul class="dishes" id="dishes"></ul>
+        <p class="carta-note" data-i18n="menu.note">Carta dimostrativa: piatti, prezzi e allergeni andranno sostituiti con quelli reali della sala. Allergeni secondo il Reg. UE 1169/2011; chiedi sempre al personale.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="mt-16 grid lg:grid-cols-2 gap-6">
-      <article class="reveal bg-cream rounded-3xl p-8 lg:p-10 border border-line">
-        <div class="quote-mark"></div>
-        <p class="serif text-2xl italic text-ink leading-snug -mt-4">
-          Carbonara da manuale, vino della casa onesto, posizione da cartolina.
-          Quando vengo a Roma è il primo posto su cui mi siedo.
-        </p>
-        <div class="mt-8 flex items-center gap-4 border-t border-line pt-6">
-          <div class="w-10 h-10 rounded-full bg-wine text-cream serif text-lg grid place-items-center">A</div>
-          <div>
-            <div class="font-medium text-ink">Andrea M.</div>
-            <div class="text-xs text-mute">Google Reviews · ⭐⭐⭐⭐⭐</div>
-          </div>
-        </div>
+<section class="sec enamel" id="luogo" aria-labelledby="luogo-title">
+  <div class="wrap place-grid">
+    <figure class="place-photo"><img src="img/bar-lampada-1080.webp" srcset="img/bar-lampada-640.webp 640w, img/bar-lampada-1080.webp 1080w" sizes="(max-width:900px) 90vw, 44vw" alt="Il bancone dell'enoteca con la lampada d'epoca e le bottiglie" width="1080" height="1440" loading="lazy"></figure>
+    <div class="place-text">
+      <h2 id="luogo-title" data-i18n-html="place.title">Largo Argentina. <em>Dove la storia si siede.</em></h2>
+      <p data-i18n-html="place.p1">Sotto la piazza, qualche metro più in basso, ci sono <strong>quattro templi dell'età repubblicana</strong> e i resti della Curia di Pompeo: il luogo dove, alle Idi di marzo, fu ucciso Giulio Cesare. Tra le rovine vive da decenni la colonia di gatti più famosa di Roma.</p>
+      <p data-i18n="place.p2">Su questo angolo, sotto la lampada d'epoca, c'è il nostro bancone: un caffè al volo la mattina, un tavolo nel dehors la sera.</p>
+      <ol class="timeline">
+        <li><b data-i18n="place.t1">44 a.C.</b><span data-i18n="place.t1s">Le Idi di marzo, nella Curia di Pompeo</span></li>
+        <li><b data-i18n="place.t2">1929</b><span data-i18n="place.t2s">Gli scavi riportano alla luce l'area sacra</span></li>
+        <li><b data-i18n="place.t3">Oggi</b><span data-i18n="place.t3s">Un calice, i templi davanti, i gatti intorno</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec wood" id="cantina" aria-labelledby="cantina-title">
+  <div class="wrap">
+    <div class="cantina-top">
+      <div class="sec-head" style="margin:0">
+        <h2 id="cantina-title" data-i18n-html="wine.title">Trecento etichette. <em>Una sola filosofia.</em></h2>
+        <p class="lede" data-i18n="wine.lede">La nostra carta dei vini si legge come un viaggio in treno: parte da Roma e arriva ovunque. Chiedi al sommelier da dove vuoi partire.</p>
+      </div>
+      <img src="img/cantina-parete-1080.webp" srcset="img/cantina-parete-640.webp 640w, img/cantina-parete-1080.webp 1080w" sizes="(max-width:900px) 92vw, 40vw" alt="La parete delle bottiglie in sala, con l'applique accesa" width="1080" height="1440" loading="lazy">
+    </div>
+    <ol class="route" aria-label="Il viaggio della carta dei vini">
+      <li><span class="label" data-i18n="wine.s1l">Partenza · Lazio</span><b>Roma</b><span>Cesanese del Piglio</span></li>
+      <li><span class="label" data-i18n="wine.s2l">Toscana</span><b>Montalcino</b><span>Brunello, Sangiovese</span></li>
+      <li><span class="label" data-i18n="wine.s3l">Piemonte</span><b>Langhe</b><span>Barolo, Nebbiolo</span></li>
+      <li><span class="label" data-i18n="wine.s4l">Capolinea · Sicilia</span><b>Etna</b><span>Etna Rosso, Frappato</span></li>
+    </ol>
+    <p class="tally"><span><b>120</b><span data-i18n="wine.red">rossi</span></span><span><b>90</b><span data-i18n="wine.white">bianchi</span></span><span><b>45</b><span data-i18n="wine.sparkling">bollicine</span></span><span><b>45</b><span data-i18n="wine.sweet">dolci e rosati</span></span><span data-i18n="wine.approx">Numeri indicativi</span></p>
+  </div>
+</section>
+
+<section class="sec night" aria-labelledby="gal-title" style="padding-bottom:clamp(64px,8vw,110px)">
+  <div class="wrap sec-head">
+    <h2 id="gal-title" data-i18n-html="gal.title">Da mattina <em>a mezzanotte.</em></h2>
+  </div>
+  <div class="strip" tabindex="0" aria-label="Galleria fotografica">
+    <figure><img src="img/cappuccino-640.webp" alt="Cappuccino con latte art nella tazza della casa" width="640" height="853" loading="lazy"><figcaption data-i18n="gal.c1">7:30 · il primo cappuccino</figcaption></figure>
+    <figure><img src="img/brunch-640.webp" alt="Brunch con avocado, salmone, uova e toast" width="640" height="853" loading="lazy"><figcaption data-i18n="gal.c2">11:00 · brunch</figcaption></figure>
+    <figure><img src="img/tagliolini-cozze-640.webp" alt="Tagliolini alle cozze con basilico" width="640" height="853" loading="lazy"><figcaption data-i18n="gal.c3">13:00 · tagliolini alle cozze</figcaption></figure>
+    <figure><img src="img/manhattan-640.webp" alt="Un Manhattan con ciliegia e scorza d'arancia" width="640" height="853" loading="lazy"><figcaption data-i18n="gal.c4">19:00 · Manhattan</figcaption></figure>
+    <figure><img src="img/tavola-calici-640.webp" alt="Un cameriere prepara la tavola con i calici" width="640" height="853" loading="lazy"><figcaption data-i18n="gal.c5">20:00 · la tavola è pronta</figcaption></figure>
+    <figure><img src="img/risotto-scoglio-640.webp" alt="Risotto allo scoglio con gambero rosso" width="640" height="853" loading="lazy"><figcaption data-i18n="gal.c6">21:00 · risotto allo scoglio</figcaption></figure>
+    <figure><img src="img/foto-pane-640.webp" alt="Fotografia d'epoca in cornice appesa in sala" width="640" height="711" loading="lazy"><figcaption data-i18n="gal.c7">Le foto alle pareti</figcaption></figure>
+    <figure><img src="img/insegna-legno-640.webp" alt="Il logo dell'Antica Enoteca inciso nel legno" width="640" height="798" loading="lazy"><figcaption data-i18n="gal.c8">Inciso nel legno</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec enamel" id="voci" aria-labelledby="voci-title">
+  <div class="wrap">
+    <div class="voices-head">
+      <div class="sec-head" style="margin:0">
+        <h2 id="voci-title" data-i18n-html="rev.title">Cosa dicono <em>di noi.</em></h2>
+      </div>
+      <div class="score"><b>4,8</b><span><span class="stars" aria-hidden="true">★★★★★</span><br><span data-i18n="rev.count">Oltre 3.500 recensioni</span><br>Google</span></div>
+    </div>
+    <div class="quotes">
+      <blockquote><p data-i18n="rev.q1">«Carbonara da manuale, vino della casa onesto, posizione da cartolina. Quando vengo a Roma è il primo posto su cui mi siedo.»</p><footer><span class="stars" aria-hidden="true">★★★★★</span>Andrea M.</footer></blockquote>
+      <blockquote><p data-i18n="rev.q2">«Carta dei vini con personalità: ti sanno consigliare anche se non ne sai niente. Il saltimbocca vale il viaggio.»</p><footer><span class="stars" aria-hidden="true">★★★★★</span>Giulia R.</footer></blockquote>
+      <blockquote><p data-i18n="rev.q3">«Cena fuori, i gatti di Largo Argentina che ti girano intorno, una buona bottiglia. Roma fa così. Tornerò.»</p><footer><span class="stars" aria-hidden="true">★★★★★</span>Marco T.</footer></blockquote>
+      <blockquote><p data-i18n="rev.q4">«Servizio attento senza essere invadente. Il pecorino del tagliere ti fa capire perché vale il prezzo. La sera meglio prenotare.»</p><footer><span class="stars" aria-hidden="true">★★★★★</span>Sara V.</footer></blockquote>
+    </div>
+    <p class="demo-note" data-i18n="rev.note">Recensioni di esempio: nella versione definitiva qui andranno citazioni reali dalla scheda Google, con il consenso degli autori.</p>
+  </div>
+</section>
+
+<section class="sec wood" id="sedi" aria-labelledby="sedi-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="sedi-title" data-i18n-html="loc.title">Due indirizzi, <em>una sola casa.</em></h2>
+      <p class="lede" data-i18n="loc.lede">La nostra storia comincia in via della Croce, in una delle enoteche più antiche di Roma. A Largo Argentina l'abbiamo portata sulla piazza.</p>
+    </div>
+    <div class="sedi">
+      <article class="sede here">
+        <p class="label" data-i18n="loc.hereTag">Sei qui</p>
+        <h3>Largo di Torre Argentina</h3>
+        <p>Via di S. Nicola de' Cesarini, 5</p>
+        <p class="sede-sub" data-i18n="loc.hereSub">Colazione, pranzo, aperitivo e cena · dehors sulla piazza</p>
       </article>
-      <article class="reveal reveal-delay-1 bg-cream rounded-3xl p-8 lg:p-10 border border-line">
-        <div class="quote-mark"></div>
-        <p class="serif text-2xl italic text-ink leading-snug -mt-4">
-          Carta dei vini con personalità: ti sanno consigliare anche se non sai
-          niente. Il saltimbocca vale il viaggio.
-        </p>
-        <div class="mt-8 flex items-center gap-4 border-t border-line pt-6">
-          <div class="w-10 h-10 rounded-full bg-wine text-cream serif text-lg grid place-items-center">G</div>
-          <div>
-            <div class="font-medium text-ink">Giulia R.</div>
-            <div class="text-xs text-mute">Google Reviews · ⭐⭐⭐⭐⭐</div>
-          </div>
-        </div>
-      </article>
-      <article class="reveal bg-cream rounded-3xl p-8 lg:p-10 border border-line">
-        <div class="quote-mark"></div>
-        <p class="serif text-2xl italic text-ink leading-snug -mt-4">
-          Cena fuori, i gatti di Largo Argentina che ti girano intorno, una buona
-          bottiglia. Roma fa così. Tornerò.
-        </p>
-        <div class="mt-8 flex items-center gap-4 border-t border-line pt-6">
-          <div class="w-10 h-10 rounded-full bg-wine text-cream serif text-lg grid place-items-center">M</div>
-          <div>
-            <div class="font-medium text-ink">Marco T.</div>
-            <div class="text-xs text-mute">Google Reviews · ⭐⭐⭐⭐⭐</div>
-          </div>
-        </div>
-      </article>
-      <article class="reveal reveal-delay-1 bg-cream rounded-3xl p-8 lg:p-10 border border-line">
-        <div class="quote-mark"></div>
-        <p class="serif text-2xl italic text-ink leading-snug -mt-4">
-          Servizio attento senza essere invadente. Il pecorino del tagliere
-          ti fa capire perché vale il prezzo. Prenotare la sera.
-        </p>
-        <div class="mt-8 flex items-center gap-4 border-t border-line pt-6">
-          <div class="w-10 h-10 rounded-full bg-wine text-cream serif text-lg grid place-items-center">S</div>
-          <div>
-            <div class="font-medium text-ink">Sara V.</div>
-            <div class="text-xs text-mute">Google Reviews · ⭐⭐⭐⭐⭐</div>
-          </div>
-        </div>
+      <article class="sede">
+        <p class="label" data-i18n="loc.histTag">La sede storica · dal Settecento</p>
+        <h3>Via della Croce</h3>
+        <p>Via della Croce, 76b · <span data-i18n="loc.histNear">a due passi da piazza di Spagna</span></p>
+        <p class="sede-sub" data-i18n="loc.histSub">Il bancone antico, le sale affrescate, la vasca di marmo dove riposavano le anfore</p>
       </article>
     </div>
-
-    <p class="text-xs text-mute mt-10 text-center max-w-2xl mx-auto">Recensioni di esempio. Saranno sostituite con citazioni reali dalle 1.470 recensioni Google.</p>
   </div>
 </section>
 
-<!-- I GATTI / Easter egg -->
-<section class="bg-ink text-cream py-24 lg:py-32 overflow-hidden">
-  <div class="max-w-5xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-7 reveal">
-      <p class="eyebrow text-gold">Curiosità</p>
-      <h2 class="h-display h-display-md mt-6">
-        I nostri vicini hanno<br/><span class="italic font-light text-gold">la coda.</span>
-      </h2>
-      <p class="mt-6 serif text-xl text-cream/85 leading-relaxed">
-        Largo di Torre Argentina ospita la più grande colonia felina di Roma:
-        circa centocinquanta gatti, accuditi da volontarie da settant'anni.
-        Quando ceni nel dehors, qualcuno potrebbe presentarsi al tavolo.
-      </p>
-      <p class="mt-4 serif text-xl text-cream/85 leading-relaxed">
-        Non diamo loro da mangiare dalla cucina. <em>Lo fanno già le volontarie</em>.
-      </p>
-    </div>
-    <div class="lg:col-span-5 reveal reveal-delay-1">
-      <div class="grid grid-cols-3 gap-2 text-center">
-        <div class="bg-cream/5 rounded-2xl p-5 border border-cream/10">
-          <div class="serif text-3xl text-gold">150</div>
-          <div class="text-[10px] uppercase tracking-widest text-cream/60 mt-1">Gatti</div>
-        </div>
-        <div class="bg-cream/5 rounded-2xl p-5 border border-cream/10">
-          <div class="serif text-3xl text-gold">70</div>
-          <div class="text-[10px] uppercase tracking-widest text-cream/60 mt-1">Anni di colonia</div>
-        </div>
-        <div class="bg-cream/5 rounded-2xl p-5 border border-cream/10">
-          <div class="serif text-3xl text-gold">44</div>
-          <div class="text-[10px] uppercase tracking-widest text-cream/60 mt-1">a.C.</div>
-        </div>
+<section class="sec night" id="prenota" aria-labelledby="prenota-title">
+  <div class="wrap book">
+    <div>
+      <h2 id="prenota-title" data-i18n-html="book.title">Un tavolo, <em>a tuo nome.</em></h2>
+      <p class="lede" style="margin-top:18px" data-i18n="book.lede">Il dehors si riempie in fretta, soprattutto nel weekend. Una telefonata, due minuti, e il posto è tuo.</p>
+      <a class="phone-big" href="tel:+390669452178">06 6945 2178</a>
+      <div class="book-alt">
+        <a class="btn btn-fill" href="tel:+390669452178"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="book.call">Chiama ora</span></a>
+        <a class="btn btn-line" href="https://wa.me/390669452178" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>WhatsApp</a>
+        <a class="btn btn-line" href="https://www.thefork.it/" target="_blank" rel="noopener">TheFork</a>
       </div>
-      <p class="mt-4 text-xs text-cream/55 text-center serif italic">Sotto i nostri tavoli, sei metri sotto, c'è la Curia di Pompeo. Gli storici dicono che è lì che cadde Cesare.</p>
+      <table class="hours" id="hours">
+        <caption class="label" data-i18n="book.hours">Orari</caption>
+        <tbody>
+          <tr data-days="1,2,3,4,5,6"><td data-i18n="book.monsat">Lunedì – sabato</td><td>7:30 – 24:00</td></tr>
+          <tr data-days="0"><td data-i18n="book.sun">Domenica</td><td>9:00 – 24:00</td></tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-</section>
-
-<!-- PRENOTA -->
-<section id="prenota" class="bg-cream py-28 lg:py-40 relative overflow-hidden">
-  <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-wine/5 blur-3xl"></div>
-  <div class="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-gold/10 blur-3xl"></div>
-  <div class="relative max-w-5xl mx-auto px-6 text-center">
-    <p class="reveal eyebrow">Prenota</p>
-    <h2 class="reveal reveal-delay-1 h-display h-display-lg mt-8 text-ink">
-      Un tavolo,<br/><span class="italic font-light text-wine">a tuo nome.</span>
-    </h2>
-    <p class="reveal reveal-delay-2 mt-8 text-xl serif text-mute leading-relaxed max-w-2xl mx-auto">
-      Il dehors si esaurisce in fretta, specie nei weekend. Prenota il tuo tavolo:
-      una telefonata, due minuti, e il posto è tuo.
-    </p>
-
-    <div class="reveal reveal-delay-3 mt-14 grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-      <a href="tel:+390669452178" class="group bg-paper hover:bg-wine border border-line rounded-3xl p-8 text-left transition-colors duration-300">
-        <div class="text-[10px] uppercase tracking-widest text-mute group-hover:text-cream/75 font-semibold">Telefono</div>
-        <div class="serif text-2xl mt-3 text-ink group-hover:text-cream">06 6945 2178</div>
-        <div class="mt-6 text-sm text-mute group-hover:text-cream/80 serif italic">Lo strumento più veloce.</div>
-      </a>
-      <a href="#" class="group bg-paper hover:bg-wine border border-line rounded-3xl p-8 text-left transition-colors duration-300">
-        <div class="text-[10px] uppercase tracking-widest text-mute group-hover:text-cream/75 font-semibold">Online</div>
-        <div class="serif text-2xl mt-3 text-ink group-hover:text-cream">TheFork</div>
-        <div class="mt-6 text-sm text-mute group-hover:text-cream/80 serif italic">Link da inserire.</div>
-      </a>
-      <a href="mailto:info@anticaenoteca.example" class="group bg-paper hover:bg-wine border border-line rounded-3xl p-8 text-left transition-colors duration-300">
-        <div class="text-[10px] uppercase tracking-widest text-mute group-hover:text-cream/75 font-semibold">Gruppi & eventi</div>
-        <div class="serif text-2xl mt-3 text-ink group-hover:text-cream">Email</div>
-        <div class="mt-6 text-sm text-mute group-hover:text-cream/80 serif italic">Privatizzazioni, compleanni.</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- DOVE -->
-<section id="dove" class="bg-paper py-24 lg:py-32">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-    <div class="reveal">
-      <p class="eyebrow">Dove siamo</p>
-      <h2 class="h-display h-display-lg mt-8 text-ink">Via di S. Nicola<br/>de' Cesarini, <span class="italic font-light text-wine">5</span>.</h2>
-      <p class="mt-6 serif text-lg text-mute italic">Largo di Torre Argentina, lato sud. Sei metri sopra l'area sacra repubblicana.</p>
-      <dl class="mt-10 space-y-6">
-        <div class="flex items-baseline gap-4 border-b border-line pb-5">
-          <dt class="w-32 text-[11px] text-mute uppercase tracking-widest font-medium">Indirizzo</dt>
-          <dd class="serif text-lg text-ink">Via di S. Nicola de' Cesarini, 5 — 00186 Roma (RM)</dd>
-        </div>
-        <div class="flex items-baseline gap-4 border-b border-line pb-5">
-          <dt class="w-32 text-[11px] text-mute uppercase tracking-widest font-medium">Telefono</dt>
-          <dd><a class="serif text-lg text-ink hover:text-wine transition-colors" href="tel:+390669452178">06 6945 2178</a></dd>
-        </div>
-        <div class="flex items-baseline gap-4 border-b border-line pb-5">
-          <dt class="w-32 text-[11px] text-mute uppercase tracking-widest font-medium">Orari</dt>
-          <dd>
-            <div class="serif text-lg text-ink">Tutti i giorni 7:30 – 00:00</div>
-            <div id="liveStatus" class="text-sm mt-1"><span class="inline-block w-2 h-2 rounded-full bg-mute align-middle mr-1.5"></span>Verifica orari…</div>
-          </dd>
-        </div>
-        <div class="flex items-baseline gap-4 border-b border-line pb-5">
-          <dt class="w-32 text-[11px] text-mute uppercase tracking-widest font-medium">Trasporti</dt>
-          <dd class="serif text-lg text-ink">Bus 30/40/46/62/64/81/87 · Tram 8 — fermata Argentina</dd>
-        </div>
-      </dl>
-      <div class="mt-10 flex flex-wrap gap-3">
-        <a href="https://www.google.com/maps/dir/?api=1&destination=Via+di+S.+Nicola+de+Cesarini+5+Roma" target="_blank" rel="noopener" class="btn-pill btn-wine">Indicazioni</a>
-        <a href="tel:+390669452178" class="btn-pill btn-outline">Chiama</a>
+    <div>
+      <div class="map"><iframe title="Mappa: Via di S. Nicola de' Cesarini 5, Roma" src="https://www.google.com/maps?q=Via%20di%20S.%20Nicola%20de'%20Cesarini%205%2C%2000186%20Roma&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="where">
+        <div><span class="label" data-i18n="book.addr">Indirizzo</span><span>Via di S. Nicola de' Cesarini, 5 — 00186 Roma</span></div>
+        <div><span class="label" data-i18n="book.transit">Come arrivare</span><span data-i18n="book.transitTxt">Tram 8 e bus 30, 40, 46, 62, 64, 81, 87 — fermata Argentina</span></div>
+        <div><span class="label" data-i18n="book.groups">Gruppi</span><span data-i18n="book.groupsTxt">Compleanni e cene private: chiamaci per il dehors riservato</span></div>
       </div>
-    </div>
-    <div class="reveal reveal-delay-1 rounded-3xl overflow-hidden shadow-sm aspect-[4/5] lg:aspect-square bg-cream">
-      <iframe
-        title="Mappa di L'Antica Enoteca Largo di Torre Argentina"
-        src="https://www.google.com/maps?q=Via+di+S.+Nicola+de+Cesarini+5+Roma&output=embed"
-        width="100%" height="100%" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p style="margin-top:22px"><a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&destination=Via%20di%20S.%20Nicola%20de'%20Cesarini%205%2C%20Roma" target="_blank" rel="noopener"><span data-i18n="book.directions">Indicazioni stradali</span></a></p>
     </div>
   </div>
 </section>
+</main>
 
-<!-- BIG FINAL CTA -->
-<section class="bg-black text-cream py-28 lg:py-40 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-40">
-    <img data-parallax="0.2" class="parallax-bg w-full h-[120%] object-cover" src="img/06_DTOawkQDJXn.jpg" alt="" loading="lazy" />
-    <div class="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black"></div>
-  </div>
-  <div class="relative max-w-5xl mx-auto px-6 text-center">
-    <p class="reveal eyebrow text-gold">L'invito</p>
-    <h2 class="reveal reveal-delay-1 h-display h-display-lg mt-8 text-cream">
-      Ti aspettiamo<br/>su Largo Argentina.
-    </h2>
-    <p class="reveal reveal-delay-2 mt-8 serif text-xl text-cream/85 italic max-w-2xl mx-auto">
-      Pranzo, aperitivo o cena. Da soli, in due, in dieci. La porta è aperta dalle undici.
-    </p>
-    <div class="reveal reveal-delay-3 mt-12 flex flex-wrap items-center justify-center gap-4">
-      <a href="#prenota" class="btn-pill btn-wine">Prenota un tavolo</a>
-      <a href="tel:+390669452178" class="btn-pill bg-white/10 text-cream hover:bg-white/20 backdrop-blur">06 6945 2178</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-ink text-cream/65 text-[13px]">
-  <div class="max-w-7xl mx-auto px-6 py-16 grid sm:grid-cols-12 gap-10">
-    <div class="sm:col-span-5">
-      <div class="flex items-center gap-3 text-cream">
-        <img src="img/00_profile.jpg" alt="Logo L'Antica Enoteca" class="w-9 h-9 rounded-full object-cover ring-1 ring-wine/30" />
-        <span class="serif text-lg font-medium">L'Antica Enoteca</span>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <a class="brand" href="#main"><img src="img/logo-insegna.webp" width="40" height="40" alt=""><span>L'Antica Enoteca</span></a>
+        <p style="margin-top:16px;max-width:26em" data-i18n="foot.about">Cucina romana, vini italiani e una piazza che ha visto due millenni.</p>
       </div>
-      <p class="mt-5 max-w-sm serif italic text-cream/55">
-        Cucina romana, vini italiani, una piazza che ha visto due millenni.
-      </p>
+      <div><p class="label" data-i18n="foot.contacts">Contatti</p><ul><li><a href="tel:+390669452178">06 6945 2178</a></li><li>Via di S. Nicola de' Cesarini, 5</li><li>00186 Roma (RM)</li></ul></div>
+      <div><p class="label" data-i18n="book.hours">Orari</p><ul><li data-i18n="foot.h1">Lun – sab 7:30 – 24:00</li><li data-i18n="foot.h2">Dom 9:00 – 24:00</li></ul></div>
     </div>
-    <div class="sm:col-span-3">
-      <div class="uppercase tracking-widest text-cream text-[11px] font-semibold">Contatti</div>
-      <ul class="mt-4 space-y-2">
-        <li><a class="hover:text-cream" href="tel:+390669452178">06 6945 2178</a></li>
-        <li><a class="hover:text-cream" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Via+di+S.+Nicola+de+Cesarini+5+Roma">Via di S. Nicola de' Cesarini, 5</a></li>
-        <li>00186 Roma (RM)</li>
-      </ul>
-    </div>
-    <div class="sm:col-span-2">
-      <div class="uppercase tracking-widest text-cream text-[11px] font-semibold">Orari</div>
-      <ul class="mt-4 space-y-2">
-        <li>Lun – Dom</li>
-        <li class="text-cream">7:30 – 00:00</li>
-      </ul>
-    </div>
-    <div class="sm:col-span-2">
-      <div class="uppercase tracking-widest text-cream text-[11px] font-semibold">Prenota</div>
-      <ul class="mt-4 space-y-2">
-        <li><a class="hover:text-cream" href="#prenota">Telefono</a></li>
-        <li><a class="hover:text-cream" href="#prenota">TheFork</a></li>
-        <li><a class="hover:text-cream" href="mailto:info@anticaenoteca.example">Gruppi</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="border-t border-cream/10">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cream/45">
-      <div>© <span id="year"></span> L'Antica Enoteca · Largo di Torre Argentina. Demo non ufficiale.</div>
-      <div class="serif italic">Immagini Unsplash a scopo dimostrativo. Recensioni di esempio.</div>
+    <div class="legal">
+      <span>© L'Antica Enoteca · P.IVA e REA da inserire · <a href="#" data-i18n="foot.privacy">Privacy</a> · <a href="#" data-i18n="foot.cookie">Cookie</a></span>
+      <span data-i18n="foot.demo">Demo non ufficiale a scopo dimostrativo. Foto dal profilo pubblico del locale.</span>
     </div>
   </div>
 </footer>
 
+<div class="dock">
+  <a class="btn btn-line" href="tel:+390669452178"><span data-i18n="dock.call">Chiama</span></a>
+  <a class="btn btn-fill" href="#prenota"><span data-i18n="cta.book">Prenota</span></a>
+</div>
+
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+(function(){
+  var ROME='Europe/Rome';
+  var ALLERGENS={it:{1:'Glutine',2:'Crostacei',3:'Uova',4:'Pesce',7:'Latte',8:'Frutta a guscio',9:'Sedano',12:'Solfiti',14:'Molluschi'},en:{1:'Gluten',2:'Crustaceans',3:'Eggs',4:'Fish',7:'Milk',8:'Nuts',9:'Celery',12:'Sulphites',14:'Molluscs'}};
+  var MOMENTS=[
+    {id:'colazione',from:450,to:690,hours:'7:30–11:30',img:'cornetti-crema',
+      it:{name:'Colazione',intro:'Cornetti sfornati, cappuccino con la tazza incisa, e un brunch per chi se la prende comoda.',cap:'Cornetti alla crema, appena sfornati'},
+      en:{name:'Breakfast',intro:'Fresh cornetti, cappuccino in our engraved cup, and a brunch for slow mornings.',cap:'Custard cornetti, straight from the oven'},
+      dishes:[
+        {p:'€ 2,00',a:[1,3,7],it:['Cornetto alla crema','Sfoglia fragrante, crema pasticcera della casa.'],en:['Custard cornetto','Flaky pastry, house-made custard.']},
+        {p:'€ 1,80',a:[7],it:['Cappuccino','Latte art, nella tazza con la nostra incisione.'],en:['Cappuccino','Latte art, served in our engraved cup.']},
+        {p:'€ 14',a:[1,3,4],sig:1,it:["Brunch dell'Enoteca",'Avocado, salmone affumicato, uova, toast, rucola.'],en:['Enoteca brunch','Avocado, smoked salmon, eggs, toast, rocket.']},
+        {p:'€ 7',a:[1,3,7],it:['Maritozzo con panna','Soffice, panna fresca montata a mano.'],en:['Maritozzo with cream','Soft sweet bun, hand-whipped fresh cream.']},
+        {p:'€ 4',a:[],it:["Spremuta d'arancia",'Fatta al momento.'],en:['Fresh orange juice','Squeezed to order.']}
+      ]},
+    {id:'pranzo',from:690,to:930,hours:'11:30–15:30',img:'tagliolini-cozze',
+      it:{name:'Pranzo',intro:'La cucina romana senza scorciatoie, a due passi dal Pantheon.',cap:'Tagliolini alle cozze, il nostro signature'},
+      en:{name:'Lunch',intro:'Roman cooking with no shortcuts, a short walk from the Pantheon.',cap:'Tagliolini with mussels, our signature'},
+      dishes:[
+        {p:'€ 18',a:[1,3,12,14],sig:1,it:['Tagliolini alle cozze','Pasta fresca, cozze nostrane, vino bianco, basilico.'],en:['Tagliolini with mussels','Fresh pasta, local mussels, white wine, basil.']},
+        {p:'€ 16',a:[1,3,7],it:['Carbonara','Guanciale, pecorino romano, tuorli, pepe.'],en:['Carbonara','Guanciale, pecorino romano, egg yolk, black pepper.']},
+        {p:'€ 14',a:[1,7],it:['Cacio e pepe','Tonnarello fresco mantecato.'],en:['Cacio e pepe','Fresh tonnarelli, pecorino and pepper.']},
+        {p:'€ 15',a:[1,7],it:['Amatriciana','Bucatini, pomodoro, guanciale, pecorino.'],en:['Amatriciana','Bucatini, tomato, guanciale, pecorino.']},
+        {p:'€ 9',a:[],it:['Carciofo alla giudia','Croccante fuori, morbido dentro. Solo in stagione.'],en:['Jewish-style artichoke','Crisp outside, tender inside. In season only.']}
+      ]},
+    {id:'aperitivo',from:930,to:1170,hours:'15:30–19:30',img:'manhattan',
+      it:{name:'Aperitivo',intro:'Il bancone sotto la lampada: un calice dalla carta o un cocktail, e qualcosa da piluccare.',cap:'Manhattan, al bancone'},
+      en:{name:'Aperitivo',intro:'At the bar under the old lamp: a glass from the list or a cocktail, and something to nibble.',cap:'A Manhattan at the bar'},
+      dishes:[
+        {p:'€ 10',a:[12],sig:1,it:['Manhattan','Whisky, vermouth rosso, ciliegia, scorza d’arancia.'],en:['Manhattan','Whiskey, sweet vermouth, cherry, orange peel.']},
+        {p:'€ 8',a:[12],it:['Spritz','Aperol o Campari, prosecco, soda.'],en:['Spritz','Aperol or Campari, prosecco, soda.']},
+        {p:'€ 6–14',a:[12],it:['Calice dalla carta','Selezione del sommelier, dal Lazio in giù.'],en:['Wine by the glass','Sommelier’s pick, from Lazio southwards.']},
+        {p:'€ 18',a:[7,8],it:["Tagliere dell'Enoteca",'Salumi e formaggi del Lazio, miele, marmellate.'],en:['Enoteca board','Cured meats and cheeses from Lazio, honey, jams.']},
+        {p:'€ 4',a:[1,3,7],it:['Supplì al telefono','Riso al ragù, cuore di mozzarella filante.'],en:['Supplì','Fried rice ball with ragù and a molten mozzarella heart.']}
+      ]},
+    {id:'cena',from:1170,to:1440,hours:'19:30–24:00',img:'risotto-scoglio',
+      it:{name:'Cena',intro:'Il dehors si accende sulla piazza. Qui la carta si fa lunga e il vino si sceglie con calma.',cap:'Risotto allo scoglio con gambero rosso'},
+      en:{name:'Dinner',intro:'The terrace lights up on the square. The menu gets longer and the wine is chosen slowly.',cap:'Seafood risotto with red prawn'},
+      dishes:[
+        {p:'€ 22',a:[2,7,12,14],sig:1,it:['Risotto allo scoglio','Mantecato, gambero rosso, prezzemolo.'],en:['Seafood risotto','Creamy risotto, red prawn, parsley.']},
+        {p:'€ 22',a:[7,12],it:['Saltimbocca alla romana','Vitello, prosciutto, salvia, vino bianco.'],en:['Saltimbocca alla romana','Veal, prosciutto, sage, white wine.']},
+        {p:'€ 24',a:[9,12],it:['Coda alla vaccinara','Quattro ore di cottura. Da prenotare.'],en:['Oxtail stew','Slow-cooked for four hours. Order ahead.']},
+        {p:'€ 26',a:[],it:['Abbacchio scottadito','Costolette d’agnello alla griglia.'],en:['Abbacchio scottadito','Grilled lamb chops.']},
+        {p:'€ 8',a:[1,3,7],it:['Tiramisù della casa','Mascarpone, caffè espresso, savoiardi.'],en:['House tiramisù','Mascarpone, espresso, ladyfingers.']}
+      ]}
+  ];
+  var EN={
+    'skip':'Skip to content','nav.menu':'Menu','nav.place':'The place','nav.wine':'Wine','nav.reviews':'Reviews','nav.where':'Find us',
+    'cta.book':'Book','cta.bookTable':'Book a table','cta.menuNow':'What’s on now',
+    'hero.copy':'Wine, Roman cooking and cocktails on the square where Caesar fell. From the 7:30 cappuccino to the last glass at midnight.',
+    'facts.reviews':'Over 3,500 Google reviews','facts.hours':'Breakfast · lunch · dinner','facts.dehors':'Terrace','facts.dehorsSub':'On the square',
+    'menu.title':'Four moments, <em>one kitchen.</em>','menu.lede':'From 7:30 to midnight the menu changes with the hour. Here is what’s on right now — tap a moment to see the others.',
+    'menu.note':'Sample menu: dishes, prices and allergens will be replaced with the real ones. Allergens per EU Reg. 1169/2011; always ask our staff.',
+    'place.title':'Largo Argentina. <em>Where history takes a seat.</em>',
+    'place.p1':'Below the square lie <strong>four temples from the Roman Republic</strong> and the remains of the Curia of Pompey — where Julius Caesar was murdered on the Ides of March. Among the ruins lives Rome’s most famous cat colony.',
+    'place.p2':'On this corner, under the old lamp, stands our bar: a quick coffee in the morning, a table on the terrace at night.',
+    'place.t1':'44 BC','place.t1s':'The Ides of March, in the Curia of Pompey','place.t2':'1929','place.t2s':'Excavations bring the sacred area back to light','place.t3':'Today','place.t3s':'A glass of wine, the temples in front, the cats around',
+    'wine.title':'Three hundred labels. <em>One philosophy.</em>','wine.lede':'Our wine list reads like a train journey: it leaves from Rome and goes everywhere. Ask the sommelier where you’d like to start.',
+    'wine.s1l':'Departure · Lazio','wine.s2l':'Tuscany','wine.s3l':'Piedmont','wine.s4l':'Terminus · Sicily','wine.red':'reds','wine.white':'whites','wine.sparkling':'sparkling','wine.sweet':'sweet & rosé','wine.approx':'Approximate figures',
+    'gal.title':'From morning <em>to midnight.</em>','gal.c1':'7:30 · the first cappuccino','gal.c2':'11:00 · brunch','gal.c3':'1 pm · tagliolini with mussels','gal.c4':'7 pm · Manhattan','gal.c5':'8 pm · the table is set','gal.c6':'9 pm · seafood risotto','gal.c7':'Photos on the walls','gal.c8':'Carved in wood',
+    'rev.title':'What people <em>say.</em>','rev.count':'Over 3,500 reviews',
+    'rev.q1':'“Textbook carbonara, honest house wine, postcard location. Whenever I’m in Rome it’s the first place I sit down.”','rev.q2':'“A wine list with personality — they can advise you even if you know nothing. The saltimbocca is worth the trip.”','rev.q3':'“Dinner outside, the Largo Argentina cats wandering around, a good bottle. That’s Rome. I’ll be back.”','rev.q4':'“Attentive service without being intrusive. The pecorino on the board tells you why it’s worth it. Book in the evening.”',
+    'rev.note':'Sample reviews: the final version will show real quotes from the Google listing, with the authors’ consent.',
+    'book.title':'A table, <em>in your name.</em>','book.lede':'The terrace fills up fast, especially at weekends. One phone call, two minutes, and the table is yours.',
+    'book.call':'Call now','book.hours':'Opening hours','book.monsat':'Monday – Saturday','book.sun':'Sunday','book.addr':'Address','book.transit':'Getting here','book.transitTxt':'Tram 8 and buses 30, 40, 46, 62, 64, 81, 87 — Argentina stop','book.groups':'Groups','book.groupsTxt':'Birthdays and private dinners: call us about the reserved terrace','book.directions':'Get directions',
+    'foot.about':'Roman cooking, Italian wines and a square that has seen two thousand years.','foot.contacts':'Contact','foot.h1':'Mon – Sat 7:30 am – midnight','foot.h2':'Sun 9 am – midnight','foot.privacy':'Privacy','foot.cookie':'Cookies','foot.demo':'Unofficial demo for presentation purposes. Photos from the venue’s public profile.',
+    'dock.call':'Call','loc.title':'Two addresses, <em>one house.</em>','loc.lede':'Our story begins on Via della Croce, in one of the oldest wine bars in Rome. At Largo Argentina we brought it out onto the square.','loc.hereTag':'You are here','loc.hereSub':'Breakfast, lunch, aperitivo and dinner · terrace on the square','loc.histTag':'The historic house · since the 1700s','loc.histNear':'steps from the Spanish Steps','loc.histSub':'The old counter, frescoed rooms, and the marble tank where amphorae once rested'
+  };
+  var UI={
+    it:{open:'Aperto ora · fino a mezzanotte',closedMorning:function(t){return 'Chiuso · apriamo alle '+t},now:'Adesso',today:'Oggi',tomorrow:'domattina'},
+    en:{open:'Open now · until midnight',closedMorning:function(t){return 'Closed · we open at '+t},now:'Now',today:'Today',tomorrow:'tomorrow'}
+  };
+  var lang='it',current=null,userPicked=false;
+  var orig={};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){orig[el.dataset.i18n]=el.textContent});
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){orig[el.dataset.i18nHtml]=el.innerHTML});
 
-  // Sticky nav background switch on scroll
-  const nav = document.getElementById('nav');
-  const navTitle = document.getElementById('navTitle');
-  const navLinks = document.getElementById('navLinks');
-  function navSwitch() {
-    const y = window.scrollY;
-    if (y > 80) {
-      nav.classList.add('bg-paper/90','backdrop-blur-xl','border-b','border-line','text-ink');
-      nav.classList.remove('text-cream');
-      if (navLinks) navLinks.classList.add('text-ink');
-    } else {
-      nav.classList.remove('bg-paper/90','backdrop-blur-xl','border-b','border-line','text-ink');
-      nav.classList.add('text-cream');
-      if (navLinks) navLinks.classList.remove('text-ink');
+  function romeNow(){
+    var parts=new Intl.DateTimeFormat('en-GB',{timeZone:ROME,weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+    var o={};parts.forEach(function(p){o[p.type]=p.value});
+    var days={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    return {day:days[o.weekday],min:parseInt(o.hour,10)*60+parseInt(o.minute,10)};
+  }
+  function opening(day){return day===0?540:450}
+  function momentFor(t){
+    if(t.min<opening(t.day))return null;
+    for(var i=0;i<MOMENTS.length;i++){if(t.min>=MOMENTS[i].from&&t.min<MOMENTS[i].to)return MOMENTS[i].id}
+    return 'cena';
+  }
+  function updateStatus(){
+    var t=romeNow(),el=document.getElementById('status'),span=el.querySelector('span');
+    var isOpen=t.min>=opening(t.day);
+    el.classList.toggle('closed',!isOpen);
+    span.textContent=isOpen?UI[lang].open:UI[lang].closedMorning(t.day===0?'9:00':'7:30');
+    document.querySelectorAll('#hours tr').forEach(function(tr){
+      var on=tr.dataset.days.split(',').indexOf(String(t.day))>-1;
+      tr.classList.toggle('today',on);
+      tr.firstElementChild.setAttribute('data-today',UI[lang].today);
+    });
+    return t;
+  }
+  function renderTabs(){
+    var t=romeNow(),nowId=momentFor(t),box=document.getElementById('moments');
+    box.innerHTML='';
+    MOMENTS.forEach(function(m){
+      var b=document.createElement('button');
+      b.type='button';b.role='tab';b.id='tab-'+m.id;b.setAttribute('aria-controls','cartaPanel');
+      b.setAttribute('aria-selected',m.id===current?'true':'false');b.tabIndex=m.id===current?0:-1;
+      b.innerHTML='<span>'+m[lang].name+'</span><small>'+m.hours+'</small>'+(m.id===nowId?'<span class="now-tag">'+UI[lang].now+'</span>':'');
+      b.addEventListener('click',function(){userPicked=true;select(m.id,true)});
+      box.appendChild(b);
+    });
+  }
+  function renderPanel(animate){
+    var m=MOMENTS.filter(function(x){return x.id===current})[0],L=m[lang];
+    var list=document.getElementById('dishes'),photo=document.getElementById('cartaPhoto'),img=photo.querySelector('img');
+    document.getElementById('cartaPanel').setAttribute('aria-labelledby','tab-'+m.id);
+    function paint(){
+      document.getElementById('panelIntro').textContent=L.intro;
+      list.innerHTML=m.dishes.map(function(d){
+        var D=d[lang];
+        var al=d.a.length?'<ul class="allergens" aria-label="'+(lang==='it'?'Allergeni':'Allergens')+'">'+d.a.map(function(n){return '<li>'+n+' · '+ALLERGENS[lang][n]+'</li>'}).join('')+'</ul>':'';
+        return '<li class="dish"><h3>'+D[0]+(d.sig?'<span class="sig">Signature</span>':'')+'</h3><span class="price">'+d.p+'</span><p>'+D[1]+'</p>'+al+'</li>';
+      }).join('');
+      img.src='img/'+m.img+'-1080.webp';
+      img.srcset='img/'+m.img+'-640.webp 640w, img/'+m.img+'-1080.webp 1080w';
+      img.alt=L.cap;
+      photo.querySelector('figcaption').textContent=L.cap;
     }
+    if(!animate||matchMedia('(prefers-reduced-motion: reduce)').matches){paint();return}
+    list.classList.add('swap');photo.classList.add('swap');
+    setTimeout(function(){paint();requestAnimationFrame(function(){list.classList.remove('swap');photo.classList.remove('swap')})},260);
   }
-  window.addEventListener('scroll', navSwitch, { passive: true });
-  navSwitch();
+  function select(id,animate){current=id;renderTabs();renderPanel(animate)}
+  document.getElementById('moments').addEventListener('keydown',function(e){
+    var i=MOMENTS.findIndex(function(m){return m.id===current}),n=null;
+    if(e.key==='ArrowRight')n=(i+1)%MOMENTS.length;
+    if(e.key==='ArrowLeft')n=(i-1+MOMENTS.length)%MOMENTS.length;
+    if(n===null)return;
+    e.preventDefault();userPicked=true;select(MOMENTS[n].id,true);document.getElementById('tab-'+MOMENTS[n].id).focus();
+  });
 
-  // Reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  function setLang(l){
+    lang=l;document.documentElement.lang=l;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;el.textContent=l==='en'&&EN[k]?EN[k]:orig[k]});
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.dataset.i18nHtml;el.innerHTML=l==='en'&&EN[k]?EN[k]:orig[k]});
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l?'true':'false')});
+    try{localStorage.setItem('ae-lang',l)}catch(e){}
+    updateStatus();renderTabs();renderPanel(false);
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
 
-  // Parallax
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduced) {
-    const items = [...document.querySelectorAll('[data-parallax]')];
-    let ticking = false;
-    function apply() {
-      ticking = false;
-      const vh = window.innerHeight;
-      for (const el of items) {
-        const rect = el.getBoundingClientRect();
-        const offsetCenter = (rect.top + rect.height / 2) - vh / 2;
-        const factor = parseFloat(el.dataset.parallax) || 0.2;
-        const ty = -offsetCenter * factor;
-        el.style.transform = `translate3d(0, ${ty.toFixed(1)}px, 0)`;
-      }
-    }
-    window.addEventListener('scroll', () => {
-      if (!ticking) { requestAnimationFrame(apply); ticking = true; }
-    }, { passive: true });
-    apply();
-  }
+  var t=updateStatus();
+  current=momentFor(t)||'colazione';
+  var saved=null;try{saved=localStorage.getItem('ae-lang')}catch(e){}
+  var initial=saved||((navigator.language||'it').toLowerCase().indexOf('it')===0?'it':'en');
+  setLang(initial);
+  setInterval(function(){var t2=updateStatus();if(!userPicked){var id=momentFor(t2)||'colazione';if(id!==current)select(id,true)}},60000);
 
-  // Live open/closed (07:30 → 00:00)
-  function computeStatus(now) {
-    const hm = now.getHours() * 60 + now.getMinutes();
-    const open = 7 * 60 + 30;
-    const close = 24 * 60;
-    if (hm >= open && hm < close) {
-      return { open: true, label: 'Aperto ora · chiude alle 00:00' };
-    }
-    return { open: false, label: 'Chiuso · apre alle 7:30' };
-  }
-  const s = computeStatus(new Date());
-  const ls = document.getElementById('liveStatus');
-  if (ls) {
-    ls.innerHTML = `<span class="inline-block w-2 h-2 rounded-full align-middle mr-1.5" style="background:${s.open ? '#7d1d1d' : '#b08a4f'}"></span>${s.label}`;
-  }
+  var top=document.getElementById('top');
+  function onScroll(){top.classList.toggle('solid',window.scrollY>40)}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  requestAnimationFrame(function(){document.querySelector('.hero').classList.add('lit')});
+})();
 </script>
 </body>
 </html>

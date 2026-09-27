@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Per il titolare — L'Antica Enoteca</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#5c0c1a">
+<link rel="icon" href="../img/logo-insegna.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Federant&family=Alegreya:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --enamel:#5c0c1a;--enamel-hi:#7d1426;--night:#1b0c0d;--wood:#2b1710;
+  --brass:#cf9f55;--brass-hi:#e7c27f;--cream:#f3e5c8;--cream-2:rgba(243,229,200,.78);--cream-3:rgba(243,229,200,.56);--line:rgba(243,229,200,.18);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --display:'Federant',serif;--text:'Alegreya',Georgia,serif;--label:'Josefin Sans',system-ui,sans-serif;
+  --gutter:clamp(18px,5vw,64px);color-scheme:dark;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-color:var(--enamel-hi) var(--night)}
+body{background:var(--night);color:var(--cream);font-family:var(--text);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--brass);color:var(--night)}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1px}
+a:focus-visible{outline:2px solid var(--brass-hi);outline-offset:4px;border-radius:4px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 var(--gutter)}
+.label{font-family:var(--label);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+h1,h2{font-weight:400;text-wrap:balance}
+h1{font-family:var(--display);font-size:clamp(46px,7.4vw,100px);line-height:.98;margin-top:22px}
+h1 em,h2 em{font-style:normal;color:var(--brass-hi)}
+h2{font-family:var(--display);font-size:clamp(34px,4.4vw,56px);line-height:1.04;margin-top:14px}
+.lede{font-size:clamp(20px,1.8vw,24px);color:var(--cream-2);max-width:34em;margin-top:26px;text-wrap:pretty}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-family:var(--label);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--brass);background:var(--brass);color:var(--night);transition:background-color .25s,transform .35s var(--ease-out)}
+.btn:hover{background:var(--brass-hi)}
+.btn:active{transform:scale(.97)}
+.btn-line{background:transparent;color:var(--cream);border-color:var(--cream-3)}
+.btn-line:hover{background:var(--cream);color:var(--enamel)}
+
+.hero{background:var(--enamel);padding:clamp(56px,9vw,120px) 0 clamp(64px,9vw,110px);position:relative;overflow:hidden}
+.hero .wrap{position:relative}
+.top{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:20px}
+.top img{width:36px;height:36px;border-radius:8px}
+.proof{display:flex;flex-wrap:wrap;gap:16px 48px;margin-top:44px;padding-top:26px;border-top:1px solid var(--line)}
+.proof div{display:grid}
+.proof b{font-family:var(--display);font-weight:400;font-size:clamp(34px,4vw,48px);line-height:1.05}
+.proof span{font-family:var(--label);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-3)}
+
+.sec{padding:clamp(72px,10vw,130px) 0}
+.losses{list-style:none;margin-top:44px;counter-reset:l}
+.losses li{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:12px clamp(24px,5vw,72px);padding:30px 0;border-top:1px solid var(--line)}
+.losses li:last-child{border-bottom:1px solid var(--line)}
+.losses h3{font-family:var(--display);font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.1}
+.losses p{color:var(--cream-2)}
+.losses p strong{color:var(--cream);font-weight:500}
+.src{display:block;margin-top:8px;font-size:15px;font-style:italic;color:var(--cream-3)}
+@media(max-width:760px){.losses li{grid-template-columns:1fr}}
+
+.gets{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:start;margin-top:44px}
+.phone{position:sticky;top:32px;justify-self:center;width:min(100%,330px);aspect-ratio:9/19;border-radius:44px;overflow:hidden;box-shadow:0 0 0 10px #0d0607,0 0 0 11px rgba(207,159,85,.4),0 40px 80px -30px rgba(0,0,0,.8);background:var(--enamel)}
+.phone iframe{width:390px;height:823px;border:0;transform:scale(.846);transform-origin:0 0}
+.checks{list-style:none;display:grid;gap:22px}
+.checks li{display:grid;grid-template-columns:28px 1fr;gap:14px}
+.checks svg{width:24px;height:24px;margin-top:4px;color:var(--brass-hi)}
+.checks b{display:block;font-weight:500;font-size:21px}
+.checks span{color:var(--cream-2);font-size:17px}
+@media(max-width:860px){.gets{grid-template-columns:1fr}.phone{position:relative;top:0}}
+
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:44px}
+.how div{border-top:2px solid var(--brass);padding-top:20px}
+.how b{display:block;font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1;margin-bottom:8px}
+.how p{color:var(--cream-2);font-size:17px}
+@media(max-width:760px){.how{grid-template-columns:1fr}}
+
+.close{background:var(--enamel);text-align:center}
+.close h2{margin:14px auto 0;max-width:16em}
+.close .lede{margin:22px auto 0}
+.close .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px}
+.contact{margin-top:34px;font-family:var(--label);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-2)}
+.note{padding:28px 0 40px;font-size:14px;font-style:italic;color:var(--cream-3);text-align:center}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="top"><img src="../img/logo-insegna.webp" alt="">L'Antica Enoteca <span class="label" style="margin-left:6px">· per il titolare</span></p>
+    <h1 style="margin-top:48px">Oltre 3.500 recensioni. <em>Nessun sito.</em></h1>
+    <p class="lede">Su Google il suo locale ha un punteggio che quasi nessuno in centro può vantare. Ma chi la cerca trova le stelle, non trova lei: né la carta, né un modo per prenotare quando il telefono squilla a vuoto, né una pagina in inglese per i turisti che passano davanti ai templi.</p>
+    <div class="proof">
+      <div><b>4,8 / 5</b><span>su Google</span></div>
+      <div><b>3.554</b><span>recensioni</span></div>
+      <div><b>#175</b><span>su 15.799 locali a Roma</span></div>
+      <div><b>0</b><span>siti web ufficiali</span></div>
+      <div><b>2</b><span>sedi, nessuna online</span></div>
+    </div>
+    <p class="src" style="margin-top:18px">Dati pubblici da Restaurant Guru, settembre 2026, da verificare sulla scheda Google.</p>
+  </div>
+</header>
+
+<main>
+<section class="sec">
+  <div class="wrap">
+    <h2>Il locale è pieno di buone ragioni. <em>Online non se ne vede nessuna.</em></h2>
+    <ol class="losses">
+      <li><h3>Più sedi, nessuna casa comune</h3><p>Via della Croce, <strong>una delle enoteche più antiche di Roma</strong>, e Largo Argentina: stesso marchio, schede separate su ogni portale e nessun sito che le metta insieme. Chi si innamora di una sede non scopre l'altra, e trecento anni di storia non li racconta nessuno. Intanto il dominio <strong>anticaenoteca.com</strong> oggi porta a un sito di scommesse.<span class="src">Verificato il 27 settembre 2026: anticaenoteca.com reindirizza a una pagina di baccarat online.</span></p></li>
+      <li><h3>I turisti che cercano in inglese</h3><p>Largo Argentina sta sul percorso tra Pantheon, Campo de' Fiori e Trastevere. Chi cerca «restaurant near Pantheon» sceglie da una pagina con foto, menu e prezzi in inglese. Oggi quella pagina, per il suo locale, non esiste.</p></li>
+      <li><h3>Chi vuole vedere la carta prima di sedersi</h3><p>Prezzi, piatti, allergeni: sono le prime cose che si guardano dal telefono. Oggi li raccontano i portali, a modo loro e non sempre aggiornati. Con un sito la carta è la sua, con i suoi prezzi e le sue foto.</p></li>
+      <li><h3>Le prenotazioni quando il telefono non risponde</h3><p>Durante il servizio, la sera tardi, la mattina presto: chi non riesce a chiamare prenota altrove. Un sito affianca al telefono WhatsApp e TheFork, sempre a portata di pollice.</p></li>
+      <li><h3>Il controllo della sua immagine</h3><p>Foto, orari, descrizioni: oggi li decidono gli altri. Le sue foto su Instagram sono bellissime; su un sito diventano la vetrina che Google mostra a chi la cerca.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--wood)">
+  <div class="wrap">
+    <h2>Non un sito qualunque. <em>La sua insegna, accesa.</em></h2>
+    <div class="gets">
+      <div class="phone"><iframe src="../" title="Anteprima della demo su telefono" loading="lazy"></iframe></div>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>«Aperto ora», in tempo reale</b><span>Il sito sa che ore sono a Roma e dice subito se siete aperti.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>La carta che cambia con l'ora</b><span>Alle 8 mostra la colazione, alle 13 il pranzo, alle 18 l'aperitivo, alle 21 la cena. Con prezzi e allergeni, come chiede la norma europea.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Italiano e inglese, in automatico</b><span>Il turista con il telefono in inglese vede il sito in inglese, senza cercare bandierine.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Chiama e Prenota sempre sotto il pollice</b><span>Su telefono i due pulsanti restano fissi in basso, su ogni pagina.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Le sue foto e il suo video</b><span>Quelli che già pubblica su Instagram, ottimizzati per caricarsi in fretta anche col 4G in piazza.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Le due sedi, finalmente insieme</b><span>Largo Argentina e via della Croce sotto lo stesso tetto: chi arriva da una scopre l'altra.</span></div></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Google capisce chi è e dove si trova</b><span>Orari, indirizzo e carta scritti nel linguaggio che usano i motori di ricerca, più mappa e indicazioni.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>Chiavi in mano. <em>Tutto a nome suo.</em></h2>
+    <div class="how">
+      <div><b>2–3 settimane</b><p>Dalla sua carta e dai suoi orari al sito online. Il lavoro grosso, il design, è già qui davanti a lei.</p></div>
+      <div><b>Tutto intestato a lei</b><p>Dominio, hosting ed email a nome del locale. Il sito è suo, dal primo giorno.</p></div>
+      <div><b>Nessun canone</b><p>Si paga una volta. Le modifiche future, come la carta di stagione, solo quando servono.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec close">
+  <div class="wrap">
+    <h2>Dieci minuti, <em>un caffè al bancone.</em></h2>
+    <p class="lede">Le mostro la demo sul suo telefono, a due passi dai suoi tavoli. Se le piace, partiamo dalla sua carta vera.</p>
+    <div class="ctas">
+      <a class="btn" href="../">Apri la demo</a>
+      <a class="btn btn-line" href="../#carta">Guarda la carta di adesso</a>
+    </div>
+    <p class="contact">[Il tuo nome] · [il tuo telefono] · [la tua email]</p>
+  </div>
+</section>
+</main>
+<p class="note">Pagina riservata, non indicizzata. Demo non ufficiale realizzata a scopo di presentazione.</p>
+</body>
+</html>
